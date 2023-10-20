@@ -18,7 +18,7 @@ export default function ProjectCard({
         <div className="overflow-hidden rounded-lg w-3/4 h-1/2 mx-auto">
           <img
             className="h-full w-full "
-            src={`/${project.id}/${project.titleImage}`}
+            src={`./${project.id}/${project.titleImage}`}
           />
         </div>
       </div>
