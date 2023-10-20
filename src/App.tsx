@@ -6,7 +6,7 @@ import About from "./pages/About";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"https://nuowenlei.github.io/personal-portfolio"}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
