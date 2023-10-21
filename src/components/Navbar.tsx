@@ -2,11 +2,12 @@ import { Popover, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { projects, Project } from "../projects";
 
 export default function Navbar() {
   return (
     <nav className="w-screen h-20 flex flex-row justify-end px-16 bg-transparent">
-      <div className="flex flex-row gap-20">
+      <div className="flex flex-row gap-20 text-lg">
         <Link
           to="/home"
           className="text-gray-200 duration-150 hover:text-white my-auto w-1/3 outline-none font-semibold"
@@ -27,10 +28,8 @@ export default function Navbar() {
 
 function ProjectDropdown() {
   const [selected, setSelected] = useState<string>("");
-
-  const projects = ["a", "b", "c", "a", "b", "c"];
   return (
-    <Popover className="relative w-1/3 my-auto">
+    <Popover className="relative my-auto">
       {({ open }) => (
         <>
           <Popover.Button
@@ -54,14 +53,14 @@ function ProjectDropdown() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute left-1/3 z-10 mt-3 w-full h-60 rounded-lg overflow-y-scroll max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
+            <Popover.Panel className="absolute left-1/3 z-10 mt-3 w-60 h-60 rounded-lg overflow-y-scroll -translate-x-1/2 transform px-4 sm:px-0">
               <div className="relative bg-white flex flex-col w-full">
-                {projects.map((project, id) => (
+                {projects.map((project: Project, id: number) => (
                   <div
                     key={id}
                     className="hover:bg-[#748cab] duration-200 py-4 cursor-pointer text-center text-[#0d1321]"
                   >
-                    {project}
+                    {project.title}
                   </div>
                 ))}
               </div>

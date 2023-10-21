@@ -18,16 +18,13 @@ export default function WordSwiper() {
         disableOnInteraction: false,
         reverseDirection: true,
       }}
-      pagination={{
-        clickable: false,
-      }}
-      navigation={true}
+      navigation={false}
       loop={true}
-      modules={[Autoplay, Pagination, Navigation]}
+      modules={[Autoplay]}
     >
-      <SwiperSlide className="text-amber-500">Software Engineer</SwiperSlide>
-      <SwiperSlide className="text-emerald-500">ML Researcher</SwiperSlide>
-      <SwiperSlide className="text-violet-400">Data Scientist</SwiperSlide>
+      <SwiperSlide className={"text-amber-500"}>Software Engineer</SwiperSlide>
+      <SwiperSlide className={"text-emerald-500"}>ML Researcher</SwiperSlide>
+      <SwiperSlide className={"text-violet-400"}>Data Scientist</SwiperSlide>
     </Swiper>
   );
 }
