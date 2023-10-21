@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="w-screen h-20 flex flex-row justify-end px-16 bg-transparent">
       <div className="flex flex-row gap-20">
         <Link
-          to="/"
+          to="/home"
           className="text-gray-200 duration-150 hover:text-white my-auto w-1/3 outline-none font-semibold"
         >
           Home
