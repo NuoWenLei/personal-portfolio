@@ -6,15 +6,19 @@ import About from "./pages/About";
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Navigate to="/home" replace={true} />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <body className="bg-[#1d2d44] w-screen h-screen text-white">
+      <Home />
+    </body>
+
+    // <HashRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Layout />}>
+    //       <Route index element={<Navigate to="/home" replace={true} />} />
+    //       <Route path="/home" element={<Home />} />
+    //       <Route path="/about" element={<About />} />
+    //     </Route>
+    //   </Routes>
+    // </HashRouter>
   );
 }
 

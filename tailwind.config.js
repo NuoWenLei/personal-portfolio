@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         personal: "url('../public/personal_photo.jpeg')",
+        brown_uni: "url('../public/brown_uni.jpeg')",
+        work: "url('../public/work.png')",
+        remote: "url('../public/remote.png')",
       },
     },
   },

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 export default function Layout() {
   return (
     <body className="bg-[#1d2d44] w-screen h-screen text-white">
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
     </body>
   );
