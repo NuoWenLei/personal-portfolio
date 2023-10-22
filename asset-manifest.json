@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.e72a4165.css",
-    "main.js": "/personal-portfolio/static/js/main.343b8b83.js",
+    "main.css": "/personal-portfolio/static/css/main.2ddd7b7d.css",
+    "main.js": "/personal-portfolio/static/js/main.d46c2c53.js",
     "static/js/787.fb771931.chunk.js": "/personal-portfolio/static/js/787.fb771931.chunk.js",
     "static/media/personal_photo.jpeg": "/personal-portfolio/static/media/personal_photo.d1c33a0b2b8c4b17b49d.jpeg",
     "static/media/remote.png": "/personal-portfolio/static/media/remote.0019e6a603df083d071f.png",
@@ -9,16 +9,17 @@
     "static/media/work.jpg": "/personal-portfolio/static/media/work.5495f100b4db16a4f108.jpg",
     "static/media/instagram.svg": "/personal-portfolio/static/media/instagram.1c9a97e6abf8ca43d6d95ac759c14bbd.svg",
     "static/media/discord.svg": "/personal-portfolio/static/media/discord.d1d464bd6481a21fcde599e0d8699273.svg",
+    "static/media/copy.svg": "/personal-portfolio/static/media/copy.9a5f01e841e2e2f88cc17a682ee7c196.svg",
     "static/media/linkedin_colored.svg": "/personal-portfolio/static/media/linkedin_colored.a236a02cbeb24525fd3bcf55fc6e41c6.svg",
     "static/media/github.svg": "/personal-portfolio/static/media/github.04be58c17b3d5e9744424d414240dd85.svg",
     "index.html": "/personal-portfolio/index.html",
     "static/media/gmail.svg": "/personal-portfolio/static/media/gmail.cf6e9da6207069eaa596237538127bcb.svg",
-    "main.e72a4165.css.map": "/personal-portfolio/static/css/main.e72a4165.css.map",
-    "main.343b8b83.js.map": "/personal-portfolio/static/js/main.343b8b83.js.map",
+    "main.2ddd7b7d.css.map": "/personal-portfolio/static/css/main.2ddd7b7d.css.map",
+    "main.d46c2c53.js.map": "/personal-portfolio/static/js/main.d46c2c53.js.map",
     "787.fb771931.chunk.js.map": "/personal-portfolio/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e72a4165.css",
-    "static/js/main.343b8b83.js"
+    "static/css/main.2ddd7b7d.css",
+    "static/js/main.d46c2c53.js"
   ]
 }
