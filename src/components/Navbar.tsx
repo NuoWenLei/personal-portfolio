@@ -3,24 +3,40 @@ import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { projects, Project } from "../projects";
+import { ReactComponent as GitHub } from "./github.svg";
+import { ReactComponent as LinkedIn } from "./linkedin.svg";
 
 export default function Navbar() {
   return (
     <nav className="w-screen h-20 flex flex-row justify-end px-16 bg-transparent">
-      <div className="flex flex-row gap-20 text-lg">
-        <Link
+      <div className="flex flex-row gap-12 text-lg">
+        {/* <Link
           to="/home"
           className="text-gray-200 duration-150 hover:text-white my-auto w-1/3 outline-none font-semibold"
         >
           Home
-        </Link>
-        <Link
+        </Link> */}
+        <a
+          href="https://github.com/NuoWenLei"
+          target="_blank"
+          className="my-auto outline-none font-semibold"
+        >
+          <GitHub fill="#e5e7eb" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nuo-wen-lei/"
+          target="_blank"
+          className="text-gray-200 duration-150 hover:text-white my-auto outline-none font-semibold"
+        >
+          <LinkedIn fill="#e5e7eb" />
+        </a>
+        {/* <Link
           to="/about"
           className="text-gray-200 duration-150 hover:text-white my-auto w-1/3 outline-none font-semibold"
         >
           About
         </Link>
-        <ProjectDropdown />
+        <ProjectDropdown /> */}
       </div>
     </nav>
   );
