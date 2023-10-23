@@ -12,16 +12,19 @@ export default function CredentialsPage() {
   const [controlledSwiper, setControlledSwiper] = useState<any>(null);
   return (
     <div className="w-full h-full flex flex-row snap-center bg-[#0D1321]">
-      <div className="flex flex-col w-3/5 divide-y-4 gap-4 h-full pt-8 px-12">
+      <div className="flex flex-col w-1/2 divide-y-4 gap-4 h-full pt-8 px-12">
         <div className="text-gray-200 text-6xl pl-4 w-full mt-4 font-semibold">
           Credentials
         </div>
         <CredentialsSwiper controlledSwiper={controlledSwiper} />
       </div>
-      <div className="w-2/5">
-        <CredentialsBackgroundSwiper
+      <div className="w-1/2">
+        {/* <CredentialsBackgroundSwiper
           setControlledSwiper={setControlledSwiper}
-        />
+        /> */}
+        <div className={"bg-brown_uni bg-cover bg-center w-full h-full"}>
+          <div className="h-full w-full bg-[#1d2d44]/50"></div>
+        </div>
       </div>
     </div>
   );
@@ -34,7 +37,7 @@ function CredentialsSwiper({ controlledSwiper }: { controlledSwiper: any }) {
         ["--swiper-pagination-color" as any]: "#FFFFFF",
         ["--swiper-navigation-color" as any]: "#FFFFFF",
       }}
-      controller={{ control: controlledSwiper }}
+      // controller={{ control: controlledSwiper }}
       spaceBetween={50}
       slidesPerView={1}
       className="w-full h-full duration-300"
@@ -61,6 +64,7 @@ interface CredentialProps {
 }
 
 function CredentialItem({ imgUrl, info }: CredentialProps) {
+  // TODO: MIMIC linkedin items
   return (
     <div className="flex flex-row gap-16">
       <div className="h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
