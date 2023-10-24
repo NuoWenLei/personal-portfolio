@@ -63,7 +63,6 @@ function CredentialsSwiper({ controlledSwiper }: { controlledSwiper: any }) {
       <SwiperSlide className={"w-full h-full"}>
         <OrganizationalPage />
       </SwiperSlide>
-      <SwiperSlide className={"w-full h-full"}>Certifications</SwiperSlide>
     </Swiper>
   );
 }
@@ -79,7 +78,7 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
     <div className="flex flex-row gap-16 my-10 group">
       <div className="h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
         <img
-          className="h-full w-full object-center object-cover"
+          className="h-full w-full object-center object-cover rounded-lg"
           src={imgUrl}
           alt="image"
         />
@@ -92,6 +91,7 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
 function EducationPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
+      <p className="text-4xl font-bold">Education</p>
       <CredentialItem
         imgUrl={"./brownUniLogo.jpeg"}
         info={
@@ -122,6 +122,7 @@ function EducationPage() {
 function ProfessionalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
+      <p className="text-4xl font-bold">Professional Experience</p>
       <CredentialItem
         imgUrl={"./quantguide.svg"}
         info={
@@ -167,37 +168,38 @@ function ProfessionalPage() {
 function OrganizationalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
+      <p className="text-4xl font-bold">Organization Experience</p>
       <CredentialItem
         imgUrl={"./bmic.PNG"}
         info={
           <div className="flex flex-col">
             <a className="text-2xl font-semibold inline-flex gap-2">
-              Brown Machine Intelligence Community{" "}
+              B-MIC{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
                 <LinkIcon className="h-4 w-4" />
               </span>
             </a>
-            <p className="text-md mb-2">Software Engineer</p>
-            <p className="text-md text-gray-300 mb-3">May 2023 - Present</p>
+            <p className="text-md mb-2">Executive Board Member</p>
+            <p className="text-md text-gray-300 mb-3">October 2022 - Present</p>
           </div>
         }
       />
       <CredentialItem
-        imgUrl={"./numerai.png"}
+        imgUrl={"./ep.jpeg"}
         info={
           <div className="flex flex-col">
             <a
-              href="https://numer.ai/"
+              href="https://www.brownentrepreneurship.com/"
               target="_blank"
               className="text-2xl font-semibold inline-flex gap-2"
             >
-              Numerai{" "}
+              Entrepreneurship Program{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
                 <LinkIcon className="h-4 w-4" />
               </span>
             </a>
-            <p className="text-md mb-2">Software Engineering Intern</p>
-            <p className="text-md text-gray-300">June 2023 - August 2023</p>
+            <p className="text-md mb-2">Tech Team Member</p>
+            <p className="text-md text-gray-300">October 2022 - Present</p>
           </div>
         }
       />
