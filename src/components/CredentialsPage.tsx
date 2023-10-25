@@ -14,8 +14,8 @@ export default function CredentialsPage() {
   const [controlledSwiper, setControlledSwiper] = useState<any>(null);
   return (
     <div className="w-full h-full flex flex-row snap-center bg-[#0D1321]">
-      <div className="flex flex-col w-1/2 divide-y-4 gap-4 h-full pt-8 px-12">
-        <div className="text-gray-200 text-6xl pl-4 w-full mt-4 font-semibold">
+      <div className="flex flex-col w-full lg:w-2/3 xl:w-1/2 divide-y-4 gap-4 h-full pt-8 px-12">
+        <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-4 font-semibold">
           Credentials{" "}
           <a
             href="./resume.pdf"
@@ -27,7 +27,7 @@ export default function CredentialsPage() {
         </div>
         <CredentialsSwiper controlledSwiper={controlledSwiper} />
       </div>
-      <div className="w-1/2">
+      <div className="hidden lg:w-1/3 lg:flex xl:w-1/2">
         {/* <CredentialsBackgroundSwiper
           setControlledSwiper={setControlledSwiper}
         /> */}
@@ -76,7 +76,7 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
   // TODO: MIMIC linkedin items
   return (
     <div className="flex flex-row gap-16 my-10 group">
-      <div className="h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
+      <div className="hidden md:flex h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
         <img
           className="h-full w-full object-center object-cover rounded-lg"
           src={imgUrl}
@@ -91,17 +91,19 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
 function EducationPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
-      <p className="text-4xl font-bold">Education</p>
+      <p className="text-2xl md:text-4xl font-bold">Education</p>
       <CredentialItem
         imgUrl={"./brownUniLogo.jpeg"}
         info={
           <div className="flex flex-col">
-            <p className="text-2xl font-semibold">Brown University</p>
+            <p className="text-xl md:text-2xl font-semibold">
+              Brown University
+            </p>
             <p className="text-md mb-2">BSc · Computer Science</p>
             <p className="text-md text-gray-300 mb-3">
               September 2022 - Present
             </p>
-            <CoursePopover />
+            {/* <CoursePopover /> */}
           </div>
         }
       />
@@ -109,7 +111,7 @@ function EducationPage() {
         imgUrl={"./concordAcademy.jpeg"}
         info={
           <div className="flex flex-col">
-            <p className="text-2xl font-semibold">Concord Academy</p>
+            <p className="text-xl md:text-2xl font-semibold">Concord Academy</p>
             <p className="text-md mb-2">High School</p>
             <p className="text-md text-gray-300">September 2018 - June 2022</p>
           </div>
@@ -122,7 +124,7 @@ function EducationPage() {
 function ProfessionalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
-      <p className="text-4xl font-bold">Professional Experience</p>
+      <p className="text-2xl md:text-4xl font-bold">Professional Experience</p>
       <CredentialItem
         imgUrl={"./quantguide.svg"}
         info={
@@ -130,7 +132,7 @@ function ProfessionalPage() {
             <a
               href="https://www.quantguide.io/"
               target="_blank"
-              className="text-2xl font-semibold inline-flex gap-2"
+              className="text-xl md:text-2xl font-semibold inline-flex gap-2"
             >
               QuantGuide{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
@@ -149,7 +151,7 @@ function ProfessionalPage() {
             <a
               href="https://numer.ai/"
               target="_blank"
-              className="text-2xl font-semibold inline-flex gap-2"
+              className="text-xl md:text-2xl font-semibold inline-flex gap-2"
             >
               Numerai{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
@@ -168,12 +170,12 @@ function ProfessionalPage() {
 function OrganizationalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
-      <p className="text-4xl font-bold">Organization Experience</p>
+      <p className="text-2xl md:text-4xl font-bold">Organization Experience</p>
       <CredentialItem
         imgUrl={"./bmic.PNG"}
         info={
           <div className="flex flex-col">
-            <a className="text-2xl font-semibold inline-flex gap-2">
+            <a className="text-xl md:text-2xl font-semibold inline-flex gap-2">
               B-MIC{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
                 <LinkIcon className="h-4 w-4" />
@@ -191,7 +193,7 @@ function OrganizationalPage() {
             <a
               href="https://www.brownentrepreneurship.com/"
               target="_blank"
-              className="text-2xl font-semibold inline-flex gap-2"
+              className="text-xl md:text-2xl font-semibold inline-flex gap-2"
             >
               Entrepreneurship Program{" "}
               <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">

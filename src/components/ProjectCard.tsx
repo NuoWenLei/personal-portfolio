@@ -14,14 +14,21 @@ export default function ProjectCard({
   project: Project;
 }) {
   return (
-    <div className={"w-full h-full flex "}>
-      <div className="w-1/2 flex flex-col justify-center">
+    <div
+      className={
+        "w-full h-full flex flex-col lg:flex-row overflow-y-scroll pt-8 pb-12 lg:py-0 lg:overflow-y-auto"
+      }
+    >
+      <div className="hidden h-full w-1/2 lg:flex flex-col justify-center">
         <div className="overflow-hidden rounded-lg w-3/4 mx-auto">
-          <img className="h-full w-full " src={`./${project.titleImage}`} />
+          <img
+            className="h-full w-full object-cover"
+            src={`./${project.titleImage}`}
+          />
         </div>
       </div>
-      <div className="w-1/2 flex flex-col justify-center">
-        <div className="flex flex-col justify-center w-3/5 gap-4 mx-auto">
+      <div className="px-16 w-full lg:px-0 lg:w-1/2 flex flex-col justify-center my-auto lg:my-0">
+        <div className="flex flex-col justify-center w-full xl:w-3/5 gap-4 lg:mr-5 xl:mx-auto">
           <h1 className="font-bold text-xl">{project.title}</h1>
           <p>{project.summary}</p>
           <div className="flex flex-row flex-wrap gap-4">
