@@ -81,6 +81,7 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
           className="h-full w-full object-center object-cover rounded-lg"
           src={imgUrl}
           alt="image"
+          loading="lazy"
         />
       </div>
       {info}
