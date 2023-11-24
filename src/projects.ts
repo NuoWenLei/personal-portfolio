@@ -14,7 +14,203 @@ export type ProjectLink = {
   url: string;
 };
 
+export const currentProjects = [
+  {
+    id: "hander",
+    title: "Hander - Second-hand Market for Students",
+    summary:
+      "My friends and I are creating a platform for students to sell and trade second-hand items. Our vision is to reduce waste and increase the efficiency of the markets around campuses.",
+    titleImage: "hander.png",
+    skills: ["Software Engineering"],
+    tools: ["Firebase", "Next.js", "React.js", "React Native"],
+    languages: ["Typescript"],
+    links: [
+      {
+        name: "Hander.us",
+        url: "https://www.hander.us/",
+      },
+    ],
+  },
+  // {
+  //   id: "stock-pred",
+  //   title: "Quantitative Stock Price Analysis and Prediction",
+  //   summary:
+  //     "I want to be rich! So I created a data processing and machine learning pipeline as part of my data science class to automatically web-scrape data and make stock price predictions.",
+  //   titleImage: "cubby-match.png",
+  //   skills: ["Machine Learning", "Data Science"],
+  //   tools: [
+  //     "Scikit-Learn",
+  //     "Pandas",
+  //     "NumPy",
+  //     "BeautifulSoup",
+  //     "NLTK",
+  //     "Selenium",
+  //     "Amazon Web Services",
+  //     "Amazon S3",
+  //     "Amazon EC2",
+  //   ],
+  //   languages: ["Python"],
+  //   links: [],
+  // },
+];
+
 export const projects = [
+  {
+    id: "cubby",
+    title: "Cubby - Friend Group Data Matcher",
+    summary: `As part of my software engineering class, my team created a data matching website that matches people into friend groups. Using Natural Language Processing techniques with Machine Learning, similarities between people are calculated based on their questionnaire answers.`,
+    titleImage: "cubby-match.png",
+    skills: ["Machine Learning", "Software Engineering"],
+    tools: [
+      "Firebase",
+      "Next.js",
+      "React.js",
+      "Tailwind",
+      "NLTK",
+      "SpaCy",
+      "Scikit-Learn",
+      "FastAPI",
+    ],
+    languages: ["Python", "Typescript"],
+    links: [
+      {
+        name: "Cubby Official Website",
+        url: "https://cs320-cubby.vercel.app/",
+      },
+      {
+        name: "Cubby API Documentation",
+        url: "https://cubbyapi.com/docs",
+      },
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/NuoWenLei/cs320-cubby#readme",
+      },
+    ],
+  },
+  {
+    id: "senior-project",
+    title: "Model Interpreter - Senior Project",
+    summary: `As my high school senior project, I created a simple neural network interpreter using Machine Learning and Natural Language Processing.`,
+    titleImage: "senior_project_interpreter.png",
+    skills: ["Machine Learning", "Data Science"],
+    tools: ["TensorFlow", "Keras", "NLTK", "SpaCy"],
+    languages: ["Python"],
+    links: [
+      {
+        name: "Project Presentation",
+        url: "https://docs.google.com/presentation/d/1HTauzC1eWBQXbKCHm5CnlEnE7BqevxECg2qkCQ1kEVA/edit?usp=sharing",
+      },
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/NuoWenLei/senior_project_stuff",
+      },
+    ],
+  },
+  {
+    id: "maskDetection",
+    title: "Mask Detection AI Web App",
+    summary: `I created and hosted an AI on the internet that detects if people are wearing masks in an image.`,
+    titleImage: "mask-2.png",
+    skills: ["Machine Learning"],
+    tools: ["TensorFlow", "Keras", "Streamlit"],
+    languages: ["Python"],
+    links: [
+      {
+        name: "Mask Detection Web App (may take some time to load)",
+        url: "https://mask-detector-web.herokuapp.com/",
+      },
+      {
+        name: "Image-processing AI Concept Presentation",
+        url: "https://youtu.be/0rtiLMUj2ZM",
+      },
+    ],
+  },
+  {
+    id: "ppbds",
+    title: "R Data Science Bootcamp Internship",
+    summary: `I interned under professor David kane as a Data Science bootcamp instructor and tutorial package developer.`,
+    titleImage: "ppbds-package.png",
+    skills: ["Data Science"],
+    tools: ["RStudio", "Tidyverse", "Learnr"],
+    languages: ["R"],
+    links: [
+      {
+        name: "Preceptor's Primer for Bayesian Data Science",
+        url: "https://ppbds.github.io/primer/index.html",
+      },
+      {
+        name: "Data Science Bootcamp hosted by professor David Kane",
+        url: "https://bootcamp.davidkane.info/",
+      },
+      {
+        name: "R Tutorial Package on CRAN",
+        url: "https://cran.r-project.org/web/packages/r4ds.tutorials/index.html",
+      },
+    ],
+  },
+  {
+    id: "shanghai-property",
+    title: "Shanghai Property Analysis Website",
+    summary: `I created a website that visualizes the relationship between properties and location in Shanghai.`,
+    titleImage: "shanghai-property.png",
+    skills: ["Data Science", "Software Engineering"],
+    tools: ["BeautifulSoup", "Pandas", "GitHub Pages"],
+    languages: ["Python", "Javascript", "HTML"],
+    links: [
+      {
+        name: "Shanghai Property Analysis Website",
+        url: "https://nuowenlei.github.io/mapping-bingo-surround/index/index.html",
+      },
+    ],
+  },
+  {
+    id: "explorantine",
+    title: "Explorantine - Hackathon Winning Project",
+    summary: `I created a web app with friends from high school to help customers discover interesting local businesses with Natural Language Processing.`,
+    titleImage: "explorantine-main-page.png",
+    skills: ["Data Science", "Software Engineering"],
+    tools: ["Flask", "NLTK", "SpaCy"],
+    languages: ["Python", "HTML", "Javascript"],
+    links: [
+      {
+        name: "Project Showcase on Devpost",
+        url: "https://devpost.com/software/explorantine-nhezvm",
+      },
+      {
+        name: "Project Presentation",
+        url: "https://youtu.be/ALz4xrCCu2M",
+      },
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/CaspianA1/BBN-Hackathon",
+      },
+    ],
+  },
+  {
+    id: "wordle",
+    title: "Wordle, Quordle, and Octordle Solver",
+    summary: `As a fun spring break project, I created algorithms that can live solve Wordle, Quordle, and Octordle (named Trish, Trisha, and Patricia respectively) with probability and statistics.`,
+    titleImage: "official_wordle_solve.png",
+    skills: ["Data Science"],
+    tools: ["BeautifulSoup", "NumPy", "Selenium"],
+    languages: ["Python", "Javascript"],
+    links: [
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/NuoWenLei/Wordle_Solver",
+      },
+    ],
+  },
+  {
+    id: "wangwang",
+    title: "Wang Wang - Wechat Miniprogram",
+    summary: `With friends, we are creating a WeChat miniprogram accessible to all WeChat users that can match tennis players with others who play in the same area.`,
+    titleImage: "wangwang-main-page.png",
+    skills: ["Software Engineering"],
+    tools: ["Mobile Development"],
+    languages: ["Javascript"],
+    links: [],
+  },
   {
     id: "covidAnalysis",
     title: "COVID Death Trend Analysis and AI Prediction",
@@ -58,48 +254,6 @@ export const projects = [
     ],
   },
   {
-    id: "explorantine",
-    title: "Explorantine - Hackathon Winning Project",
-    summary: `I created a web app with friends from high school to help customers discover interesting local businesses with Natural Language Processing.`,
-    titleImage: "explorantine-main-page.png",
-    skills: ["Data Science", "Software Engineering"],
-    tools: ["Flask", "NLTK", "SpaCy"],
-    languages: ["Python", "HTML", "Javascript"],
-    links: [
-      {
-        name: "Project Showcase on Devpost",
-        url: "https://devpost.com/software/explorantine-nhezvm",
-      },
-      {
-        name: "Project Presentation",
-        url: "https://youtu.be/ALz4xrCCu2M",
-      },
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/CaspianA1/BBN-Hackathon",
-      },
-    ],
-  },
-  {
-    id: "maskDetection",
-    title: "Mask Detection AI Web App",
-    summary: `I created and hosted an AI on the internet that detects if people are wearing masks in an image.`,
-    titleImage: "mask-2.png",
-    skills: ["Machine Learning"],
-    tools: ["TensorFlow", "Keras", "Streamlit"],
-    languages: ["Python"],
-    links: [
-      {
-        name: "Mask Detection Web App (may take some time to load)",
-        url: "https://mask-detector-web.herokuapp.com/",
-      },
-      {
-        name: "Image-processing AI Concept Presentation",
-        url: "https://youtu.be/0rtiLMUj2ZM",
-      },
-    ],
-  },
-  {
     id: "pacDonation",
     title: "Political Action Committee Donation Analysis",
     summary: `I analyzed and visualized the relationship between foreign-connected company donations with US Congress representation using data provided from the OpenSecrets website.`,
@@ -115,120 +269,6 @@ export const projects = [
       {
         name: "OpenSecrets",
         url: "https://www.opensecrets.org/",
-      },
-    ],
-  },
-  {
-    id: "ppbds",
-    title: "R Data Science Bootcamp Internship",
-    summary: `I interned under professor David kane as a Data Science bootcamp instructor and tutorial package developer.`,
-    titleImage: "ppbds-package.png",
-    skills: ["Data Science"],
-    tools: ["RStudio", "Tidyverse", "Learnr"],
-    languages: ["R"],
-    links: [
-      {
-        name: "Preceptor's Primer for Bayesian Data Science",
-        url: "https://ppbds.github.io/primer/index.html",
-      },
-      {
-        name: "Data Science Bootcamp hosted by professor David Kane",
-        url: "https://bootcamp.davidkane.info/",
-      },
-      {
-        name: "R Tutorial Package on CRAN",
-        url: "https://cran.r-project.org/web/packages/r4ds.tutorials/index.html",
-      },
-    ],
-  },
-  {
-    id: "senior-project",
-    title: "Model Interpreter - Senior Project",
-    summary: `As my high school senior project, I created a simple neural network interpreter using Machine Learning and Natural Language Processing.`,
-    titleImage: "senior_project_interpreter.png",
-    skills: ["Machine Learning", "Data Science"],
-    tools: ["TensorFlow", "Keras", "NLTK", "SpaCy"],
-    languages: ["Python"],
-    links: [
-      {
-        name: "Project Presentation",
-        url: "https://docs.google.com/presentation/d/1HTauzC1eWBQXbKCHm5CnlEnE7BqevxECg2qkCQ1kEVA/edit?usp=sharing",
-      },
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/NuoWenLei/senior_project_stuff",
-      },
-    ],
-  },
-  {
-    id: "shanghai-property",
-    title: "Shanghai Property Analysis Website",
-    summary: `I created a website that visualizes the relationship between properties and location in Shanghai.`,
-    titleImage: "shanghai-property.png",
-    skills: ["Data Science", "Software Engineering"],
-    tools: ["BeautifulSoup", "Pandas", "GitHub Pages"],
-    languages: ["Python", "Javascript", "HTML"],
-    links: [
-      {
-        name: "Shanghai Property Analysis Website",
-        url: "https://nuowenlei.github.io/mapping-bingo-surround/index/index.html",
-      },
-    ],
-  },
-  {
-    id: "wangwang",
-    title: "Wang Wang - Wechat Miniprogram",
-    summary: `With friends, we are creating a WeChat miniprogram accessible to all WeChat users that can match tennis players with others who play in the same area.`,
-    titleImage: "wangwang-main-page.png",
-    skills: ["Software Engineering"],
-    tools: ["Mobile Development"],
-    languages: ["Javascript"],
-    links: [],
-  },
-  {
-    id: "wordle",
-    title: "Wordle, Quordle, and Octordle Solver",
-    summary: `As a fun spring break project, I created algorithms that can live solve Wordle, Quordle, and Octordle (named Trish, Trisha, and Patricia respectively) with probability and statistics.`,
-    titleImage: "official_wordle_solve.png",
-    skills: ["Data Science"],
-    tools: ["BeautifulSoup", "NumPy", "Selenium"],
-    languages: ["Python", "Javascript"],
-    links: [
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/NuoWenLei/Wordle_Solver",
-      },
-    ],
-  },
-  {
-    id: "cubby",
-    title: "Cubby - Friend Group Data Matcher",
-    summary: `As part of my software engineering class, my team created a data matching website that matches people into friend groups. Using Natural Language Processing techniques with Machine Learning, similarities between people are calculated based on their questionnaire answers.`,
-    titleImage: "cubby-match.png",
-    skills: ["Machine Learning", "Software Engineering"],
-    tools: [
-      "Firebase",
-      "Next.js",
-      "React.js",
-      "Tailwind",
-      "NLTK",
-      "SpaCy",
-      "Scikit-Learn",
-      "FastAPI",
-    ],
-    languages: ["Python", "Typescript"],
-    links: [
-      {
-        name: "Cubby Official Website",
-        url: "https://cs320-cubby.vercel.app/",
-      },
-      {
-        name: "Cubby API Documentation",
-        url: "https://cubbyapi.com/docs",
-      },
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/NuoWenLei/cs320-cubby#readme",
       },
     ],
   },

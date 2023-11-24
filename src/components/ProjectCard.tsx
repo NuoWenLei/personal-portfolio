@@ -1,3 +1,4 @@
+import { LinkIcon } from "@heroicons/react/24/solid";
 import { Project, ProjectLink } from "../projects";
 
 const colors: { [key: string]: string } = {

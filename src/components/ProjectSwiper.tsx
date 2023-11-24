@@ -7,10 +7,14 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { projects, Project } from "../projects";
+import { Project } from "../projects";
 import ProjectCard from "./ProjectCard";
 
-export default function ProjectSwiper() {
+export default function ProjectSwiper({
+  allProjects,
+}: {
+  allProjects: Project[];
+}) {
   return (
     <Swiper
       style={{
@@ -32,7 +36,7 @@ export default function ProjectSwiper() {
       loop={true}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      {projects.map((project: Project, index: number) => {
+      {allProjects.map((project: Project, index: number) => {
         return (
           <SwiperSlide key={index} className={"w-screen h-[calc(100vh-5rem)]"}>
             <ProjectCard index={index} project={project} />
