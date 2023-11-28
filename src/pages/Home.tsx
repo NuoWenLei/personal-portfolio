@@ -55,21 +55,6 @@ export default function Home() {
     connectVis,
   ]);
 
-  // const refMap: { [key: string]: React.RefObject<HTMLDivElement> } = {
-  //   Home: homeRef,
-  //   "Current Projects": currentProjectsRef,
-  //   "Past Projects": pastProjectsRef,
-  //   Credentials: credentialsRef,
-  //   Socials: connectRef,
-  // };
-  // const visibilityMap: { [key: string]: boolean } = {
-  //   Home: homeVis,
-  //   "Current Projects": currentProjectsVis,
-  //   "Past Projects": pastProjectsVis,
-  //   Credentials: credentialsVis,
-  //   Socials: connectVis,
-  // };
-
   const pageSequence: string[] = useMemo(() => {
     return [
       "Home",
@@ -108,7 +93,7 @@ export default function Home() {
       </div>
       <div
         className={
-          "fixed pt-32 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-300 flex flex-col justify-start gap-6 pl-16 " +
+          "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-300 flex flex-col justify-start gap-6 pl-16 " +
           (sidebarState ? " z-20 opacity-100" : " -z-10 opacity-0")
         }
         onMouseLeave={() => setSidebarState(false)}
@@ -194,7 +179,7 @@ export default function Home() {
         ref={connectRef}
         className="w-full h-full flex flex-col snap-center divide-y-4 px-12 gap-4 pt-8"
       >
-        <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-8 font-semibold">
+        <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-4 font-semibold">
           Connect With Me!
         </div>
         <SocialPage />
