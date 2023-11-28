@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.d5bfece4.css",
-    "main.js": "/personal-portfolio/static/js/main.304d0c27.js",
+    "main.css": "/personal-portfolio/static/css/main.84ddb703.css",
+    "main.js": "/personal-portfolio/static/js/main.b57d8dae.js",
     "static/js/787.fb771931.chunk.js": "/personal-portfolio/static/js/787.fb771931.chunk.js",
     "static/media/personal_photo.jpeg": "/personal-portfolio/static/media/personal_photo.d1c33a0b2b8c4b17b49d.jpeg",
     "static/media/remote.png": "/personal-portfolio/static/media/remote.0019e6a603df083d071f.png",
@@ -11,15 +11,15 @@
     "static/media/discord.svg": "/personal-portfolio/static/media/discord.d1d464bd6481a21fcde599e0d8699273.svg",
     "static/media/copy.svg": "/personal-portfolio/static/media/copy.9a5f01e841e2e2f88cc17a682ee7c196.svg",
     "static/media/linkedin_colored.svg": "/personal-portfolio/static/media/linkedin_colored.a236a02cbeb24525fd3bcf55fc6e41c6.svg",
-    "static/media/github.svg": "/personal-portfolio/static/media/github.04be58c17b3d5e9744424d414240dd85.svg",
     "index.html": "/personal-portfolio/index.html",
+    "static/media/github.svg": "/personal-portfolio/static/media/github.04be58c17b3d5e9744424d414240dd85.svg",
     "static/media/gmail.svg": "/personal-portfolio/static/media/gmail.cf6e9da6207069eaa596237538127bcb.svg",
-    "main.d5bfece4.css.map": "/personal-portfolio/static/css/main.d5bfece4.css.map",
-    "main.304d0c27.js.map": "/personal-portfolio/static/js/main.304d0c27.js.map",
+    "main.84ddb703.css.map": "/personal-portfolio/static/css/main.84ddb703.css.map",
+    "main.b57d8dae.js.map": "/personal-portfolio/static/js/main.b57d8dae.js.map",
     "787.fb771931.chunk.js.map": "/personal-portfolio/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5bfece4.css",
-    "static/js/main.304d0c27.js"
+    "static/css/main.84ddb703.css",
+    "static/js/main.b57d8dae.js"
   ]
 }
