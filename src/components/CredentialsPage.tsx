@@ -140,8 +140,8 @@ function ProfessionalPage() {
                 <LinkIcon className="h-4 w-4" />
               </span>
             </a>
-            <p className="text-md mb-2">Software Engineer</p>
-            <p className="text-md text-gray-300 mb-3">May 2023 - Present</p>
+            <p className="text-md mb-2">Founding Engineer</p>
+            <p className="text-md text-gray-300 mb-3">May 2023 - Nov 2023</p>
           </div>
         }
       />
