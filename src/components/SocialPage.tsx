@@ -54,7 +54,7 @@ function Social({ icon, info, clip }: SocialProps) {
       onClick={() => clip && navigator.clipboard.writeText(clip)}
       className="relative flex flex-row gap-8 group duration-300 w-32 hover:w-1/3 mx-auto rounded-lg overflow-hidden bg-white"
     >
-      <div className="z-20 bg-white static h-32 w-32 p-4 duration-300 ">
+      <div className="z-10 bg-white static h-32 w-32 p-4 duration-300 ">
         {icon}
       </div>
       <div className="absolute inline-block opacity-0 group-hover:opacity-100 duration-150 inset-0 text-right pr-4 text-[#1d2d44] font-bold text-md xl:text-2xl flex flex-col justify-center">
@@ -74,9 +74,10 @@ function SocialLink({ icon, info, link }: SocialProps) {
     <a
       href={link ? link : "#"}
       target={link ? "_blank" : "_self"}
+      rel="noreferrer"
       className="relative flex flex-row gap-8 group duration-300 w-32 hover:w-1/3 mx-auto rounded-lg overflow-hidden bg-white"
     >
-      <div className="z-20 bg-white static h-32 w-32 p-4 duration-300 ">
+      <div className="z-10 bg-white static h-32 w-32 p-4 duration-300 ">
         {icon}
       </div>
       <div className="absolute opacity-0 group-hover:opacity-100 duration-150 inset-0 text-right pr-4 text-[#1d2d44] font-bold text-md xl:text-2xl flex flex-col justify-center">

@@ -1,4 +1,3 @@
-import { LinkIcon } from "@heroicons/react/24/solid";
 import { Project, ProjectLink } from "../projects";
 
 const colors: { [key: string]: string } = {
@@ -25,6 +24,7 @@ export default function ProjectCard({
           <img
             className="h-full w-full object-cover"
             src={`./${project.titleImage}`}
+            alt="project"
             loading="lazy"
           />
         </div>
@@ -51,6 +51,7 @@ export default function ProjectCard({
                 <a
                   href={link.url}
                   target="_blank"
+                  rel="noreferrer"
                   className="underline underline-offset-4"
                 >
                   {link.name}
