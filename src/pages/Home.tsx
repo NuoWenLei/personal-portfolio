@@ -9,6 +9,9 @@ import { currentProjects, projects } from "../projects";
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
   const [visiblePage, setVisiblePage] = useState<string>("Home");
+  const [scrollTimeout, setScrollTimeout] = useState<any>(null);
+
+  const fullPageRef = useRef<HTMLDivElement>(null);
 
   // Page Refs and Visibility Hooks
   const homeRef = useRef<HTMLDivElement>(null);
@@ -73,6 +76,36 @@ export default function Home() {
     });
   }, [visibilityMap, pageSequence]);
 
+  // useEffect(() => {
+  //   if (fullPageRef.current == null) {
+  //     return;
+  //   }
+  //   // Scroll listener
+  //   fullPageRef.current.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     // return a cleanup function to unregister our function since it will run multiple times
+  //     fullPageRef.current?.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [fullPageRef]);
+
+  // function handleScroll() {
+  //   console.log(sidebarState);
+  //   if (scrollTimeout) {
+  //     //if there is already a timeout in process cancel it
+  //     clearTimeout(scrollTimeout);
+  //   }
+  //   setScrollTimeout(
+  //     setTimeout(() => {
+  //       setScrollTimeout(null);
+  //       setSidebarState(false);
+  //     }, 1000)
+  //   );
+  //   if (!sidebarState) {
+  //     setSidebarState(true);
+  //   }
+  // }
+
   function onScrollToRef(ref: React.MutableRefObject<HTMLDivElement | null>) {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -84,7 +117,10 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative">
+    <div
+      ref={fullPageRef}
+      className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative"
+    >
       <div
         className="fixed top-8 right-8 z-30"
         onMouseEnter={() => setSidebarState(true)}
@@ -93,8 +129,8 @@ export default function Home() {
       </div>
       <div
         className={
-          "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-300 flex flex-col justify-start gap-6 pl-16 " +
-          (sidebarState ? " z-20 opacity-100" : " -z-10 opacity-0")
+          "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-200 flex flex-col justify-start gap-6 pl-16 " +
+          (sidebarState ? " z-20 opacity-100" : " opacity-0")
         }
         onMouseLeave={() => setSidebarState(false)}
       >
@@ -102,7 +138,7 @@ export default function Home() {
           return (
             <p
               className={
-                "cursor-pointer duration-300 underline-offset-4 " +
+                "cursor-pointer duration-300 underline-offset-4 hover:opacity-100 " +
                 (visiblePage !== page ? "opacity-50" : " underline ")
               }
               onClick={() => onScrollToRef(refMap[page])}
@@ -117,27 +153,23 @@ export default function Home() {
         className="w-screen h-full bg-personal bg-cover bg-center md:bg-center snap-center"
       >
         <div className="w-screen h-full bg-[#1d2d44]/50 ">
-          <div className="flex flex-col h-5/6 mr-auto justify-end xl:justify-center ml-16 pt-12 text-gray-300 gap-0">
-            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-row flex inline-flex pb-5">
-              Hello <span className="ml-2 md:ml-4 text-[#89fffd]">World</span>!
+          <div className="flex flex-col h-5/6 mr-auto justify-end xl:justify-center ml-16 pt-12 text-gray-600 gap-0">
+            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-row flex inline-flex pb-5 mix-blend-screen">
+              Hello World!
             </div>
             <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex inline-flex md:gap-4 pb-5 lg:pl-12">
-              <span className="text-gray-300 inline md:hidden">
+              <span className="inline md:hidden mix-blend-screen">
                 My name is{" "}
               </span>
-              <p className="text-[#ff00ff]">
-                <span className="text-gray-300 hidden md:inline">I'm </span> Nuo
-                Wen Lei
-              </p>
+              <span className="hidden md:inline mix-blend-screen">I'm </span>
+              <p className="text-[#599BFF] brightness-110">Nuo Wen Lei</p>
             </div>
-            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 h-16 lg:pl-24 mb-5 md:mb-0 lg:mb-5">
+            <div className="mix-blend-screen font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 h-16 lg:pl-24 mb-5 md:mb-0 lg:mb-5">
               <span className="inline">I bring</span>
-              <span className="inline bg-clip-text text-transparent bg-gradient-to-r from-[#ff00ff] md:from-20% to-50% md:to-80% to-[#89fffd]">
-                Ideas to Life
-              </span>
+              <span className="inline">Ideas to Life</span>
             </div>
             <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 lg:pl-36">
-              <span className="inline">with</span>
+              <span className="inline mix-blend-screen">with</span>
               <div className="h-32 md:h-16 overflow-hidden">
                 <HomeSwiper />
               </div>

@@ -22,11 +22,15 @@ export default function WordSwiper() {
       loop={true}
       modules={[Autoplay]}
     >
-      <SwiperSlide className={"text-amber-500"}>
+      <SwiperSlide className={"text-amber-500 brightness-110"}>
         Software Engineering
       </SwiperSlide>
-      <SwiperSlide className={"text-emerald-500"}>Machine Learning</SwiperSlide>
-      <SwiperSlide className={"text-violet-400"}>Data Science</SwiperSlide>
+      <SwiperSlide className={"text-emerald-500 brightness-110"}>
+        Machine Learning
+      </SwiperSlide>
+      <SwiperSlide className={"text-violet-400 brightness-110"}>
+        Data Science
+      </SwiperSlide>
     </Swiper>
   );
 }

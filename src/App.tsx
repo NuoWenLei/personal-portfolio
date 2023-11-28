@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <body className="bg-[#1d2d44] w-screen h-screen text-white">
+    <body className="bg-[#0D1321] w-screen h-screen text-white">
       <Home />
     </body>
 
