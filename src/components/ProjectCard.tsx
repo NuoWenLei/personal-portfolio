@@ -16,7 +16,7 @@ export default function ProjectCard({
   return (
     <div
       className={
-        "w-full h-full flex flex-col lg:flex-row overflow-y-scroll pt-8 pb-12 lg:py-0 lg:overflow-y-auto"
+        "ml-4 lg:w-[98%] xl:w-[90%] h-[75vh] flex flex-col lg:flex-row overflow-y-scroll pt-8 pb-12 lg:py-0 lg:overflow-y-auto rounded-xl bg-[#162037]"
       }
     >
       <div className="hidden h-full w-1/2 lg:flex flex-col justify-center">
@@ -30,7 +30,7 @@ export default function ProjectCard({
         </div>
       </div>
       <div className="px-16 w-full lg:px-0 lg:w-1/2 flex flex-col justify-center my-auto lg:my-0">
-        <div className="flex flex-col justify-center w-full xl:w-3/5 gap-4 lg:mr-5 xl:mx-auto">
+        <div className="flex flex-col justify-center w-full xl:w-4/5 gap-4 lg:pr-5 xl:mx-auto">
           <h1 className="font-bold text-xl">{project.title}</h1>
           <p>{project.summary}</p>
           <div className="flex flex-row flex-wrap gap-4">
@@ -52,7 +52,7 @@ export default function ProjectCard({
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline underline-offset-4"
+                  className="underline underline-offset-4 hover:text-white text-white/70 duration-200"
                 >
                   {link.name}
                 </a>

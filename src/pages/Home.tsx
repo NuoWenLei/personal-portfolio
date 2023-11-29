@@ -119,7 +119,7 @@ export default function Home() {
   return (
     <div
       ref={fullPageRef}
-      className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative"
+      className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative bg-personal bg-contain bg-local"
     >
       <div
         className="fixed top-8 right-8 z-30"
@@ -130,7 +130,7 @@ export default function Home() {
       <div
         className={
           "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-200 flex flex-col justify-start gap-6 pl-16 " +
-          (sidebarState ? " z-20 opacity-100" : " opacity-0")
+          (sidebarState ? " z-20 opacity-100" : " -z-10 opacity-0")
         }
         onMouseLeave={() => setSidebarState(false)}
       >
@@ -150,9 +150,9 @@ export default function Home() {
       </div>
       <div
         ref={homeRef}
-        className="w-screen h-full bg-personal bg-cover bg-center md:bg-center snap-center"
+        className="w-screen h-full bg-transparent snap-center snap-always"
       >
-        <div className="w-screen h-full bg-[#1d2d44]/50 ">
+        <div className="w-screen h-full bg-[#0D1321]/50">
           <div className="flex flex-col h-5/6 mr-auto justify-end xl:justify-center ml-16 pt-12 text-gray-600 gap-0">
             <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-row flex inline-flex pb-5 mix-blend-screen">
               Hello World!
@@ -175,17 +175,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* <div className="relative flex flex-row h-1/6 justify-center">
-            <ChevronDownIcon
-              className="w-full h-2/3 mt-auto animate-bounce cursor-pointer"
-              onClick={() => onScrollToRef(currentProjectsRef)}
-            />
-          </div> */}
         </div>
       </div>
       <div
         ref={currentProjectsRef}
-        className="w-full h-full flex flex-col snap-center divide-y-4 px-12 gap-4 pt-8 bg-[#0D1321]"
+        className="w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-[#0D1321]/50 to-[#0D1321] to-20% z-10"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Current Projects
@@ -194,7 +188,7 @@ export default function Home() {
       </div>
       <div
         ref={pastProjectsRef}
-        className="w-full h-full flex flex-col snap-center divide-y-4 px-12 gap-4 pt-8"
+        className="w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-[#0D1321]"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Past Projects
@@ -209,7 +203,7 @@ export default function Home() {
       </div>
       <div
         ref={connectRef}
-        className="w-full h-full flex flex-col snap-center divide-y-4 px-12 gap-4 pt-8"
+        className="w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-[#0D1321]"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-4 font-semibold">
           Connect With Me!

@@ -1,11 +1,11 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Mousewheel, FreeMode } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
-import "swiper/css/navigation";
+import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Project } from "../projects";
 import ProjectCard from "./ProjectCard";
@@ -19,22 +19,30 @@ export default function ProjectSwiper({
     <Swiper
       style={{
         ["--swiper-pagination-color" as any]: "#FFFFFF",
-        ["--swiper-navigation-color" as any]: "#FFFFFF",
+        ["--swiper-pagination-bullet-inactive-color" as any]: "#b5b5b5",
       }}
       slidesPerView={1}
       className="w-full h-full overflow-hidden"
-      autoplay={{
-        delay: 3000,
-        disableOnInteraction: true,
-        reverseDirection: false,
-      }}
+      // autoplay={{
+      //   delay: 3000,
+      //   disableOnInteraction: true,
+      //   reverseDirection: false,
+      // }}
       pagination={{
         clickable: false,
-        bulletActiveClass: "swiper-pagination-bullet-active text-white",
       }}
-      navigation={true}
-      loop={true}
-      modules={[Autoplay, Pagination, Navigation]}
+      loop={false}
+      freeMode={{
+        minimumVelocity: 0.5,
+        enabled: true,
+        momentumBounce: true,
+        sticky: false,
+      }}
+      mousewheel={{
+        releaseOnEdges: true,
+        thresholdDelta: 20,
+      }}
+      modules={[Autoplay, Pagination, Mousewheel, FreeMode]}
     >
       {allProjects.map((project: Project, index: number) => {
         return (

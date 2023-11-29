@@ -14,7 +14,7 @@ export default function CredentialsPage() {
   // const [controlledSwiper, _] = useState<any>(null);
   return (
     <>
-      <div className="flex flex-col w-full lg:w-2/3 xl:w-1/2 divide-y-4 gap-4 h-full pt-8 px-12">
+      <div className="flex flex-col w-full gap-4 h-full pt-8 px-12">
         <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-4 font-semibold">
           Credentials{" "}
           <a
@@ -28,14 +28,11 @@ export default function CredentialsPage() {
         </div>
         <CredentialsSwiper />
       </div>
-      <div className="hidden lg:w-1/3 lg:flex xl:w-1/2">
-        {/* <CredentialsBackgroundSwiper
-          setControlledSwiper={setControlledSwiper}
-        /> */}
+      {/* <div className="hidden lg:w-1/3 lg:flex xl:w-1/2">
         <div className={"bg-brown_uni bg-cover bg-center w-full h-full"}>
           <div className="h-full w-full bg-[#1d2d44]/50"></div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
@@ -127,46 +124,48 @@ function ProfessionalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
       <p className="text-2xl md:text-4xl font-bold">Professional Experience</p>
-      <CredentialItem
-        imgUrl={"./quantguide.svg"}
-        info={
-          <div className="flex flex-col">
-            <a
-              href="https://www.quantguide.io/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-xl md:text-2xl font-semibold inline-flex gap-2"
-            >
-              QuantGuide{" "}
-              <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
-                <LinkIcon className="h-4 w-4" />
-              </span>
-            </a>
-            <p className="text-md mb-2">Founding Engineer</p>
-            <p className="text-md text-gray-300 mb-3">May 2023 - Nov 2023</p>
-          </div>
-        }
-      />
-      <CredentialItem
-        imgUrl={"./numerai.png"}
-        info={
-          <div className="flex flex-col">
-            <a
-              href="https://numer.ai/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-xl md:text-2xl font-semibold inline-flex gap-2"
-            >
-              Numerai{" "}
-              <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
-                <LinkIcon className="h-4 w-4" />
-              </span>
-            </a>
-            <p className="text-md mb-2">Software Engineering Intern</p>
-            <p className="text-md text-gray-300">June 2023 - August 2023</p>
-          </div>
-        }
-      />
+      <div className="flex flex-col w-full justify-between">
+        <CredentialItem
+          imgUrl={"./quantguide.svg"}
+          info={
+            <div className="flex flex-col">
+              <a
+                href="https://www.quantguide.io/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                QuantGuide{" "}
+                <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md mb-2">Founding Engineer</p>
+              <p className="text-md text-gray-300 mb-3">May 2023 - Nov 2023</p>
+            </div>
+          }
+        />
+        <CredentialItem
+          imgUrl={"./numerai.png"}
+          info={
+            <div className="flex flex-col">
+              <a
+                href="https://numer.ai/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                Numerai{" "}
+                <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md mb-2">Software Engineering Intern</p>
+              <p className="text-md text-gray-300">June 2023 - August 2023</p>
+            </div>
+          }
+        />
+      </div>
     </div>
   );
 }
