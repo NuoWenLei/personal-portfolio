@@ -34,7 +34,7 @@ export default function Home() {
         "Current Projects": currentProjectsRef,
         "Past Projects": pastProjectsRef,
         Credentials: credentialsRef,
-        Hobby: hobbyRef,
+        Hobbies: hobbyRef,
         Socials: connectRef,
       };
     }, [
@@ -52,7 +52,7 @@ export default function Home() {
       "Current Projects": currentProjectsVis,
       "Past Projects": pastProjectsVis,
       Credentials: credentialsVis,
-      Hobby: hobbyVis,
+      Hobbies: hobbyVis,
       Socials: connectVis,
     };
   }, [
@@ -70,7 +70,7 @@ export default function Home() {
       "Current Projects",
       "Past Projects",
       "Credentials",
-      "Hobby",
+      "Hobbies",
       "Socials",
     ];
   }, []);
