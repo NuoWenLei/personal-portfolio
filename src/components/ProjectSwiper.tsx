@@ -1,12 +1,19 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Mousewheel, FreeMode } from "swiper/modules";
+import {
+  Autoplay,
+  Pagination,
+  Mousewheel,
+  FreeMode,
+  EffectCube,
+} from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import "swiper/css/effect-cube";
 import { Project } from "../projects";
 import ProjectCard from "./ProjectCard";
 
@@ -36,13 +43,22 @@ export default function ProjectSwiper({
         minimumVelocity: 0.5,
         enabled: true,
         momentumBounce: true,
-        sticky: false,
+        sticky: true,
       }}
       mousewheel={{
         releaseOnEdges: true,
         thresholdDelta: 20,
       }}
-      modules={[Autoplay, Pagination, Mousewheel, FreeMode]}
+      effect="cube"
+      cubeEffect={{
+        shadow: false,
+        slideShadows: false,
+      }}
+      // cardsEffect={{
+      //   perSlideOffset: 20,
+      //   perSlideRotate: 5,
+      // }}
+      modules={[Autoplay, Pagination, Mousewheel, FreeMode, EffectCube]}
     >
       {allProjects.map((project: Project, index: number) => {
         return (

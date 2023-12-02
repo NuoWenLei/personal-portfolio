@@ -125,29 +125,29 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "ppbds",
-    title: "R Data Science Bootcamp Internship",
-    summary: `I interned under professor David kane as a Data Science bootcamp instructor and tutorial package developer.`,
-    titleImage: "ppbds-package.png",
-    skills: ["Data Science"],
-    tools: ["RStudio", "Tidyverse", "Learnr"],
-    languages: ["R"],
-    links: [
-      {
-        name: "Preceptor's Primer for Bayesian Data Science",
-        url: "https://ppbds.github.io/primer/index.html",
-      },
-      {
-        name: "Data Science Bootcamp hosted by professor David Kane",
-        url: "https://bootcamp.davidkane.info/",
-      },
-      {
-        name: "R Tutorial Package on CRAN",
-        url: "https://cran.r-project.org/web/packages/r4ds.tutorials/index.html",
-      },
-    ],
-  },
+  // {
+  //   id: "ppbds",
+  //   title: "R Data Science Bootcamp Internship",
+  //   summary: `I interned under professor David kane as a Data Science bootcamp instructor and tutorial package developer.`,
+  //   titleImage: "ppbds-package.png",
+  //   skills: ["Data Science"],
+  //   tools: ["RStudio", "Tidyverse", "Learnr"],
+  //   languages: ["R"],
+  //   links: [
+  //     {
+  //       name: "Preceptor's Primer for Bayesian Data Science",
+  //       url: "https://ppbds.github.io/primer/index.html",
+  //     },
+  //     {
+  //       name: "Data Science Bootcamp hosted by professor David Kane",
+  //       url: "https://bootcamp.davidkane.info/",
+  //     },
+  //     {
+  //       name: "R Tutorial Package on CRAN",
+  //       url: "https://cran.r-project.org/web/packages/r4ds.tutorials/index.html",
+  //     },
+  //   ],
+  // },
   {
     id: "shanghai-property",
     title: "Shanghai Property Analysis Website",
@@ -163,29 +163,29 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "explorantine",
-    title: "Explorantine - Hackathon Winning Project",
-    summary: `I created a web app with friends from high school to help customers discover interesting local businesses with Natural Language Processing.`,
-    titleImage: "explorantine-main-page.png",
-    skills: ["Data Science", "Software Engineering"],
-    tools: ["Flask", "NLTK", "SpaCy"],
-    languages: ["Python", "HTML", "Javascript"],
-    links: [
-      {
-        name: "Project Showcase on Devpost",
-        url: "https://devpost.com/software/explorantine-nhezvm",
-      },
-      {
-        name: "Project Presentation",
-        url: "https://youtu.be/ALz4xrCCu2M",
-      },
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/CaspianA1/BBN-Hackathon",
-      },
-    ],
-  },
+  // {
+  //   id: "explorantine",
+  //   title: "Explorantine - Hackathon Winning Project",
+  //   summary: `I created a web app with friends from high school to help customers discover interesting local businesses with Natural Language Processing.`,
+  //   titleImage: "explorantine-main-page.png",
+  //   skills: ["Data Science", "Software Engineering"],
+  //   tools: ["Flask", "NLTK", "SpaCy"],
+  //   languages: ["Python", "HTML", "Javascript"],
+  //   links: [
+  //     {
+  //       name: "Project Showcase on Devpost",
+  //       url: "https://devpost.com/software/explorantine-nhezvm",
+  //     },
+  //     {
+  //       name: "Project Presentation",
+  //       url: "https://youtu.be/ALz4xrCCu2M",
+  //     },
+  //     {
+  //       name: "GitHub Repo",
+  //       url: "https://github.com/CaspianA1/BBN-Hackathon",
+  //     },
+  //   ],
+  // },
   {
     id: "wordle",
     title: "Wordle, Quordle, and Octordle Solver",
@@ -201,16 +201,16 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "wangwang",
-    title: "Wang Wang - Wechat Miniprogram",
-    summary: `With friends, we are creating a WeChat miniprogram accessible to all WeChat users that can match tennis players with others who play in the same area.`,
-    titleImage: "wangwang-main-page.png",
-    skills: ["Software Engineering"],
-    tools: ["Mobile Development"],
-    languages: ["Javascript"],
-    links: [],
-  },
+  // {
+  //   id: "wangwang",
+  //   title: "Wang Wang - Wechat Miniprogram",
+  //   summary: `With friends, we are creating a WeChat miniprogram accessible to all WeChat users that can match tennis players with others who play in the same area.`,
+  //   titleImage: "wangwang-main-page.png",
+  //   skills: ["Software Engineering"],
+  //   tools: ["Mobile Development"],
+  //   languages: ["Javascript"],
+  //   links: [],
+  // },
   {
     id: "covidAnalysis",
     title: "COVID Death Trend Analysis and AI Prediction",
@@ -234,25 +234,25 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "epilepsy",
-    title: "Epilepsy Detection AI Web App",
-    summary: `I created an AI with friends from the Inspirit AI program that determines if someone is experiencing epilepsy based on EEG brain waves.`,
-    titleImage: "epilepsy-webapp.png",
-    skills: ["Machine Learning"],
-    tools: ["TensorFlow", "Keras", "Streamlit"],
-    languages: ["Python"],
-    links: [
-      {
-        name: "Epilepsy Model (may take some time to load)",
-        url: "https://epilepsy-detection.herokuapp.com/",
-      },
-      {
-        name: "Inspirit AI Homepage",
-        url: "https://www.inspiritai.com/",
-      },
-    ],
-  },
+  // {
+  //   id: "epilepsy",
+  //   title: "Epilepsy Detection AI Web App",
+  //   summary: `I created an AI with friends from the Inspirit AI program that determines if someone is experiencing epilepsy based on EEG brain waves.`,
+  //   titleImage: "epilepsy-webapp.png",
+  //   skills: ["Machine Learning"],
+  //   tools: ["TensorFlow", "Keras", "Streamlit"],
+  //   languages: ["Python"],
+  //   links: [
+  //     {
+  //       name: "Epilepsy Model (may take some time to load)",
+  //       url: "https://epilepsy-detection.herokuapp.com/",
+  //     },
+  //     {
+  //       name: "Inspirit AI Homepage",
+  //       url: "https://www.inspiritai.com/",
+  //     },
+  //   ],
+  // },
   {
     id: "pacDonation",
     title: "Political Action Committee Donation Analysis",

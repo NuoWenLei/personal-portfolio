@@ -22,6 +22,8 @@ export default function Home() {
   const pastProjectsVis = useOnScreen(pastProjectsRef);
   const credentialsRef = useRef<HTMLDivElement>(null);
   const credentialsVis = useOnScreen(credentialsRef);
+  const hobbyRef = useRef<HTMLDivElement>(null);
+  const hobbyVis = useOnScreen(hobbyRef);
   const connectRef = useRef<HTMLDivElement>(null);
   const connectVis = useOnScreen(connectRef);
 
@@ -32,6 +34,7 @@ export default function Home() {
         "Current Projects": currentProjectsRef,
         "Past Projects": pastProjectsRef,
         Credentials: credentialsRef,
+        Hobby: hobbyRef,
         Socials: connectRef,
       };
     }, [
@@ -39,6 +42,7 @@ export default function Home() {
       currentProjectsRef,
       pastProjectsRef,
       credentialsRef,
+      hobbyRef,
       connectRef,
     ]);
 
@@ -48,6 +52,7 @@ export default function Home() {
       "Current Projects": currentProjectsVis,
       "Past Projects": pastProjectsVis,
       Credentials: credentialsVis,
+      Hobby: hobbyVis,
       Socials: connectVis,
     };
   }, [
@@ -55,6 +60,7 @@ export default function Home() {
     currentProjectsVis,
     pastProjectsVis,
     credentialsVis,
+    hobbyVis,
     connectVis,
   ]);
 
@@ -64,6 +70,7 @@ export default function Home() {
       "Current Projects",
       "Past Projects",
       "Credentials",
+      "Hobby",
       "Socials",
     ];
   }, []);
@@ -200,6 +207,25 @@ export default function Home() {
         className="w-full h-full flex flex-row snap-center bg-[#0D1321]"
       >
         <CredentialsPage />
+      </div>
+      <div
+        ref={hobbyRef}
+        className="w-full h-full flex flex-col snap-center bg-[#0D1321] px-12 gap-4 pt-8"
+      >
+        <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
+          Hobbies
+        </div>
+        <div className="flex flex-row justify-center">
+          <iframe
+            className="mt-16"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/oCPy2Drd_oQ?si=WVu5rYZBdiafq_65&amp;start=337"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
       <div
         ref={connectRef}
