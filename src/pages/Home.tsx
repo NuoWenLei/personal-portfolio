@@ -5,6 +5,7 @@ import SocialPage from "../components/SocialPage";
 import CredentialsPage from "../components/CredentialsPage";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { currentProjects, projects } from "../projects";
+import HobbiesPage from "../components/HobbiesPage";
 
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
@@ -215,17 +216,7 @@ export default function Home() {
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Hobbies
         </div>
-        <div className="flex flex-row justify-center">
-          <iframe
-            className="mt-16"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/oCPy2Drd_oQ?si=WVu5rYZBdiafq_65&amp;start=337"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
+        <HobbiesPage />
       </div>
       <div
         ref={connectRef}
