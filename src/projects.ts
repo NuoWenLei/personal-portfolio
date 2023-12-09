@@ -56,6 +56,36 @@ export const currentProjects = [
 
 export const projects = [
   {
+    id: "stock-pred",
+    title: "Quantitative Stock Price Analysis and Prediction",
+    summary:
+      "I want to be rich! So I created a data processing and machine learning pipeline as part of my data science class to automatically web-scrape data and make stock price predictions.",
+    titleImage: "stockpred.png",
+    skills: ["Machine Learning", "Data Science"],
+    tools: [
+      "Scikit-Learn",
+      "Pandas",
+      "NumPy",
+      "BeautifulSoup",
+      "NLTK",
+      "Selenium",
+      "Amazon Web Services",
+      "Amazon S3",
+      "Amazon EC2",
+    ],
+    languages: ["Python"],
+    links: [
+      {
+        name: "Official Report",
+        url: "https://github.com/QuantBears/data-analysis/blob/main/report/DATA_1030_FINAL_REPORT.pdf",
+      },
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/QuantBears/data-analysis/",
+      },
+    ],
+  },
+  {
     id: "cubby",
     title: "Cubby - Friend Group Data Matcher",
     summary: `As part of my software engineering class, my team created a data matching website that matches people into friend groups. Using Natural Language Processing techniques with Machine Learning, similarities between people are calculated based on their questionnaire answers.`,
@@ -87,25 +117,25 @@ export const projects = [
       },
     ],
   },
-  {
-    id: "senior-project",
-    title: "Model Interpreter - Senior Project",
-    summary: `As my high school senior project, I created a simple neural network interpreter using Machine Learning and Natural Language Processing.`,
-    titleImage: "senior_project_interpreter.png",
-    skills: ["Machine Learning", "Data Science"],
-    tools: ["TensorFlow", "Keras", "NLTK", "SpaCy"],
-    languages: ["Python"],
-    links: [
-      {
-        name: "Project Presentation",
-        url: "https://docs.google.com/presentation/d/1HTauzC1eWBQXbKCHm5CnlEnE7BqevxECg2qkCQ1kEVA/edit?usp=sharing",
-      },
-      {
-        name: "GitHub Repo",
-        url: "https://github.com/NuoWenLei/senior_project_stuff",
-      },
-    ],
-  },
+  // {
+  //   id: "senior-project",
+  //   title: "Model Interpreter - Senior Project",
+  //   summary: `As my high school senior project, I created a simple neural network interpreter using Machine Learning and Natural Language Processing.`,
+  //   titleImage: "senior_project_interpreter.png",
+  //   skills: ["Machine Learning", "Data Science"],
+  //   tools: ["TensorFlow", "Keras", "NLTK", "SpaCy"],
+  //   languages: ["Python"],
+  //   links: [
+  //     {
+  //       name: "Project Presentation",
+  //       url: "https://docs.google.com/presentation/d/1HTauzC1eWBQXbKCHm5CnlEnE7BqevxECg2qkCQ1kEVA/edit?usp=sharing",
+  //     },
+  //     {
+  //       name: "GitHub Repo",
+  //       url: "https://github.com/NuoWenLei/senior_project_stuff",
+  //     },
+  //   ],
+  // },
   {
     id: "maskDetection",
     title: "Mask Detection AI Web App",
@@ -188,7 +218,7 @@ export const projects = [
   // },
   {
     id: "wordle",
-    title: "Wordle, Quordle, and Octordle Solver",
+    title: "Wordle Solver",
     summary: `As a fun spring break project, I created algorithms that can live solve Wordle, Quordle, and Octordle (named Trish, Trisha, and Patricia respectively) with probability and statistics.`,
     titleImage: "official_wordle_solve.png",
     skills: ["Data Science"],
@@ -211,29 +241,29 @@ export const projects = [
   //   languages: ["Javascript"],
   //   links: [],
   // },
-  {
-    id: "covidAnalysis",
-    title: "COVID Death Trend Analysis and AI Prediction",
-    summary: `As a Capstone Project for IBM's Advanced Data Science Program, I analyzed COVID death trends with different AI techniques.`,
-    titleImage: "covid_trend.png",
-    skills: ["Machine Learning", "Data Science"],
-    tools: ["TensorFlow", "Keras", "Pandas"],
-    languages: ["Python"],
-    links: [
-      {
-        name: "Covid Analysis Report + GitHub Repo",
-        url: "https://github.com/NuoWenLei/covid_tracking_by_state#readme",
-      },
-      {
-        name: "IBM Capstoe Project Representation",
-        url: "https://www.youtube.com/watch?v=DyjopF7Bq7Q",
-      },
-      {
-        name: "IBM Advanced Data Science Program Certification",
-        url: "https://coursera.org/share/1be6f256fc23a4c73d4ceff67b97abcf",
-      },
-    ],
-  },
+  // {
+  //   id: "covidAnalysis",
+  //   title: "COVID Death Trend Analysis and AI Prediction",
+  //   summary: `As a Capstone Project for IBM's Advanced Data Science Program, I analyzed COVID death trends with different AI techniques.`,
+  //   titleImage: "covid_trend.png",
+  //   skills: ["Machine Learning", "Data Science"],
+  //   tools: ["TensorFlow", "Keras", "Pandas"],
+  //   languages: ["Python"],
+  //   links: [
+  //     {
+  //       name: "Covid Analysis Report + GitHub Repo",
+  //       url: "https://github.com/NuoWenLei/covid_tracking_by_state#readme",
+  //     },
+  //     {
+  //       name: "IBM Capstoe Project Representation",
+  //       url: "https://www.youtube.com/watch?v=DyjopF7Bq7Q",
+  //     },
+  //     {
+  //       name: "IBM Advanced Data Science Program Certification",
+  //       url: "https://coursera.org/share/1be6f256fc23a4c73d4ceff67b97abcf",
+  //     },
+  //   ],
+  // },
   // {
   //   id: "epilepsy",
   //   title: "Epilepsy Detection AI Web App",
@@ -253,23 +283,23 @@ export const projects = [
   //     },
   //   ],
   // },
-  {
-    id: "pacDonation",
-    title: "Political Action Committee Donation Analysis",
-    summary: `I analyzed and visualized the relationship between foreign-connected company donations with US Congress representation using data provided from the OpenSecrets website.`,
-    titleImage: "pac-web.png",
-    skills: ["Data Science"],
-    tools: ["RStudio", "Tidyverse"],
-    languages: ["R"],
-    links: [
-      {
-        name: "Full Donation Analysis",
-        url: "https://nuowenlei.github.io/pac-influence/",
-      },
-      {
-        name: "OpenSecrets",
-        url: "https://www.opensecrets.org/",
-      },
-    ],
-  },
+  // {
+  //   id: "pacDonation",
+  //   title: "Political Action Committee Donation Analysis",
+  //   summary: `I analyzed and visualized the relationship between foreign-connected company donations with US Congress representation using data provided from the OpenSecrets website.`,
+  //   titleImage: "pac-web.png",
+  //   skills: ["Data Science"],
+  //   tools: ["RStudio", "Tidyverse"],
+  //   languages: ["R"],
+  //   links: [
+  //     {
+  //       name: "Full Donation Analysis",
+  //       url: "https://nuowenlei.github.io/pac-influence/",
+  //     },
+  //     {
+  //       name: "OpenSecrets",
+  //       url: "https://www.opensecrets.org/",
+  //     },
+  //   ],
+  // },
 ];

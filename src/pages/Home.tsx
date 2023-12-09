@@ -33,7 +33,7 @@ export default function Home() {
       return {
         Home: homeRef,
         "Current Projects": currentProjectsRef,
-        "Past Projects": pastProjectsRef,
+        "Past Highlights": pastProjectsRef,
         Credentials: credentialsRef,
         Hobbies: hobbyRef,
         Socials: connectRef,
@@ -51,7 +51,7 @@ export default function Home() {
     return {
       Home: homeVis,
       "Current Projects": currentProjectsVis,
-      "Past Projects": pastProjectsVis,
+      "Past Highlights": pastProjectsVis,
       Credentials: credentialsVis,
       Hobbies: hobbyVis,
       Socials: connectVis,
@@ -69,9 +69,9 @@ export default function Home() {
     return [
       "Home",
       "Current Projects",
-      "Past Projects",
-      "Credentials",
+      "Past Highlights",
       "Hobbies",
+      "Credentials",
       "Socials",
     ];
   }, []);
@@ -199,15 +199,9 @@ export default function Home() {
         className="w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-[#0D1321]"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
-          Past Projects
+          Past Highlights
         </div>
         <ProjectSwiper allProjects={projects} />
-      </div>
-      <div
-        ref={credentialsRef}
-        className="w-full h-full flex flex-row snap-center bg-[#0D1321]"
-      >
-        <CredentialsPage />
       </div>
       <div
         ref={hobbyRef}
@@ -217,6 +211,12 @@ export default function Home() {
           Hobbies
         </div>
         <HobbiesPage />
+      </div>
+      <div
+        ref={credentialsRef}
+        className="w-full h-full flex flex-row snap-center bg-[#0D1321]"
+      >
+        <CredentialsPage />
       </div>
       <div
         ref={connectRef}
