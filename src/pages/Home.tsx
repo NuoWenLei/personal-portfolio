@@ -1,16 +1,19 @@
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, useLayoutEffect } from "react";
 import HomeSwiper from "../components/HomeSwiper";
 import ProjectSwiper from "../components/ProjectSwiper";
 import SocialPage from "../components/SocialPage";
 import CredentialsPage from "../components/CredentialsPage";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Bars3Icon, WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
 import { currentProjects, projects } from "../projects";
 import HobbiesPage from "../components/HobbiesPage";
 
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
   const [visiblePage, setVisiblePage] = useState<string>("Home");
-  const [scrollTimeout, setScrollTimeout] = useState<any>(null);
+  // const [scrollTimeout, setScrollTimeout] = useState<any>(null);
+
+  const windowSize = useWindowSize();
+  const [blockDisplay, setBlockDisplay] = useState<boolean>(false);
 
   const fullPageRef = useRef<HTMLDivElement>(null);
 
@@ -84,6 +87,14 @@ export default function Home() {
     });
   }, [visibilityMap, pageSequence]);
 
+  useEffect(() => {
+    if (windowSize[0] < 1024) {
+      setBlockDisplay(true);
+    } else {
+      setBlockDisplay(false);
+    }
+  }, [windowSize]);
+
   // useEffect(() => {
   //   if (fullPageRef.current == null) {
   //     return;
@@ -122,6 +133,21 @@ export default function Home() {
         inline: "start",
       });
     }
+  }
+
+  if (blockDisplay) {
+    return (
+      <div className="w-screen h-screen flex flex-col items-center justify-center text-white/70">
+        <WrenchScrewdriverIcon className="h-40 w-40" />
+        <p className="text-2xl font-bold flex md:hidden">
+          Constructing Phone view,
+        </p>
+        <p className="text-2xl font-bold hidden md:flex">
+          Tablet and Phone view under construction,
+        </p>
+        <p className="text-2xl font-bold">Please view on Desktop!</p>
+      </div>
+    );
   }
 
   return (
@@ -258,4 +284,17 @@ export function useOnScreen(ref: React.RefObject<HTMLDivElement>) {
   }, [ref, observer]);
 
   return isIntersecting;
+}
+
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
 }
