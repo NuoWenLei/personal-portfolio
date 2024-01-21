@@ -31,7 +31,13 @@ export default function ProjectCard({
       </div>
       <div className="px-16 w-full lg:px-0 lg:w-1/2 flex flex-col justify-center my-auto lg:my-0">
         <div className="flex flex-col justify-center w-full xl:w-4/5 gap-4 lg:pr-5 xl:mx-auto">
-          <h1 className="font-bold text-xl">{project.title}</h1>
+          <a
+            className="font-bold text-xl underline duration-300 underline-offset-4 decoration-transparent hover:decoration-white"
+            href={project.links.length > 0 ? project.links[0].url : ""}
+            target="_blank"
+          >
+            {project.title}
+          </a>
           <p>{project.summary}</p>
           <div className="flex flex-row flex-wrap gap-4">
             {project.skills.map((skill: string) => (
