@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Project, skillColors, tools } from "../projects";
+import {
+  Project,
+  skillColors,
+  allTools,
+  allSkills,
+  Category,
+} from "../projects";
 import MiniProjectCard from "./MiniProjectCard";
 import ProjectCard from "./ProjectCard";
 import { XMarkIcon } from "@heroicons/react/24/solid";
@@ -91,53 +97,59 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
           </button>
           <div className="flex flex-col gap-y-8 mb-8">
             <div className="flex flex-row flex-wrap gap-4">
-              {["Machine Learning", "Data Science", "Software Engineering"].map(
-                (skill: string) => (
-                  <button
-                    key={skill}
-                    type="button"
-                    onClick={() => {
-                      if (selectedSkills.includes(skill)) {
-                        setSelectedSkills(
-                          selectedSkills.filter((v) => v !== skill)
-                        );
-                      } else {
-                        setSelectedSkills([...selectedSkills, skill]);
-                      }
-                    }}
-                    className={
-                      "rounded-full px-4 " +
-                      skillColors[skill] +
-                      (selectedSkills.includes(skill)
-                        ? " ring-2 ring-white ring-offset-2 ring-offset-[#0D4132]"
-                        : "")
-                    }
-                  >
-                    {skill}
-                  </button>
-                )
-              )}
-            </div>
-            <div className="flex flex-row flex-wrap gap-4">
-              {tools.map((tool: string) => (
+              {allSkills.map((skill: Category) => (
                 <button
-                  key={tool}
+                  key={skill.name}
                   type="button"
                   onClick={() => {
-                    if (selectedTools.includes(tool)) {
-                      setSelectedTools(selectedTools.filter((v) => v !== tool));
+                    if (selectedSkills.includes(skill.name)) {
+                      setSelectedSkills(
+                        selectedSkills.filter((v) => v !== skill.name)
+                      );
                     } else {
-                      setSelectedTools([...selectedTools, tool]);
+                      setSelectedSkills([...selectedSkills, skill.name]);
                     }
                   }}
                   className={
-                    "rounded-full px-4 bg-[#748CAB] " +
-                    (selectedTools.includes(tool)
+                    "rounded-full px-4 " +
+                    skillColors[skill.name] +
+                    (selectedSkills.includes(skill.name)
                       ? " ring-2 ring-white ring-offset-2 ring-offset-[#0D4132]"
                       : "")
                   }
                 >
-                  {tool}
+                  {skill.name}
+                  <span className="rounded-full px-1 text-sm bg-[#e8eefa] text-[#0D1321] ml-2">
+                    {skill.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-row flex-wrap gap-4">
+              {allTools.map((tool: Category) => (
+                <button
+                  key={tool.name}
+                  type="button"
+                  onClick={() => {
+                    if (selectedTools.includes(tool.name)) {
+                      setSelectedTools(
+                        selectedTools.filter((v) => v !== tool.name)
+                      );
+                    } else {
+                      setSelectedTools([...selectedTools, tool.name]);
+                    }
+                  }}
+                  className={
+                    "rounded-full px-4 bg-[#748CAB] outline-none " +
+                    (selectedTools.includes(tool.name)
+                      ? " ring-2 ring-white ring-offset-2 ring-offset-[#0D4132]"
+                      : "")
+                  }
+                >
+                  {tool.name}{" "}
+                  <span className="rounded-full px-1 text-sm bg-[#e8eefa] text-[#0D1321] ml-0.5">
+                    {tool.count}
+                  </span>
                 </button>
               ))}
             </div>

@@ -9,6 +9,11 @@ export type Project = {
   languages: string[];
 };
 
+export type Category = {
+  name: string;
+  count: number;
+};
+
 export type ProjectLink = {
   name: string;
   url: string;
@@ -429,6 +434,43 @@ export const projectArchives = [
   },
 ];
 
-export const tools = projectArchives
-  .flatMap((p) => p.tools)
-  .filter((value, index, array) => array.indexOf(value) === index);
+let tools = projectArchives.flatMap((p) => p.tools);
+let skills = projectArchives.flatMap((p) => p.skills);
+
+let toolCount = Object.fromEntries(
+  tools
+    .filter((value, index, array) => array.indexOf(value) === index)
+    .map((t) => [t, 0])
+);
+
+let skillCount = Object.fromEntries(
+  skills
+    .filter((value, index, array) => array.indexOf(value) === index)
+    .map((t) => [t, 0])
+);
+
+tools.forEach((t) => {
+  toolCount[t] += 1;
+});
+
+skills.forEach((t) => {
+  skillCount[t] += 1;
+});
+
+export const allTools = Object.entries(toolCount).map((tc) => {
+  return {
+    name: tc[0],
+    count: tc[1],
+  } as Category;
+});
+
+export const allSkills = Object.entries(skillCount).map((tc) => {
+  return {
+    name: tc[0],
+    count: tc[1],
+  } as Category;
+});
+
+// export const tools = projectArchives
+//   .flatMap((p) => p.tools)
+//   .filter((value, index, array) => array.indexOf(value) === index);

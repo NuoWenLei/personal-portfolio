@@ -19,6 +19,7 @@ export default function MiniProjectCard({
       <img
         className="object-cover object-center absolute z-0 h-full w-full"
         src={project.titleImage}
+        alt={project.title}
       />
       <div className="relative p-4 bg-[#0D1321]/80 w-full h-full z-10 font-medium">
         {project.title}
