@@ -73,7 +73,7 @@ interface CredentialProps {
 function CredentialItem({ imgUrl, info }: CredentialProps) {
   // TODO: MIMIC linkedin items
   return (
-    <div className="flex flex-row gap-16 my-10 group">
+    <div className="flex flex-row gap-8 xl:gap-16 my-10 group w-1/2">
       <div className="hidden md:flex h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
         <img
           className="h-full w-full object-center object-cover rounded-lg"
@@ -124,7 +124,29 @@ function ProfessionalPage() {
   return (
     <div className="h-full w-full flex flex-col px-16 mt-12">
       <p className="text-2xl md:text-4xl font-bold">Professional Experience</p>
-      <div className="flex flex-col w-full justify-between">
+      <div className="flex flex-row w-full justify-between flex-wrap">
+        <CredentialItem
+          imgUrl={"./microsoft.png"}
+          info={
+            <div className="flex flex-col">
+              <a
+                href="https://www.microsoft.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                Microsoft{" "}
+                <span className="mt-auto mb-1.5 group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md mb-2">Software Engineering Intern</p>
+              <p className="text-md text-gray-300 mb-3">
+                June 2024 - August 2024
+              </p>
+            </div>
+          }
+        />
         <CredentialItem
           imgUrl={"./quantguide.svg"}
           info={
@@ -141,7 +163,9 @@ function ProfessionalPage() {
                 </span>
               </a>
               <p className="text-md mb-2">Founding Engineer</p>
-              <p className="text-md text-gray-300 mb-3">May 2023 - Nov 2023</p>
+              <p className="text-md text-gray-300 mb-3">
+                May 2023 - November 2023
+              </p>
             </div>
           }
         />
@@ -204,8 +228,8 @@ function OrganizationalPage() {
                 <LinkIcon className="h-4 w-4" />
               </span>
             </a>
-            <p className="text-md mb-2">Tech Team Member</p>
-            <p className="text-md text-gray-300">October 2022 - Present</p>
+            <p className="text-md mb-2">Tech Team Co-Leader, Member</p>
+            <p className="text-md text-gray-300">October 2022 - May 2024</p>
           </div>
         }
       />

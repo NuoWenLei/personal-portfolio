@@ -1,19 +1,13 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Autoplay,
-  Pagination,
-  Mousewheel,
-  FreeMode,
-  EffectCube,
-} from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
-import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import "swiper/css/effect-cube";
+import "swiper/css/navigation";
+// import "swiper/css/effect-flip";
 import { Project } from "../projects";
 import ProjectCard from "./ProjectCard";
 
@@ -26,43 +20,32 @@ export default function ProjectSwiper({
     <Swiper
       style={{
         ["--swiper-pagination-color" as any]: "#FFFFFF",
+        ["--swiper-navigation-color" as any]: "#FFFFFF",
         ["--swiper-pagination-bullet-inactive-color" as any]: "#b5b5b5",
       }}
-      slidesPerView={1}
-      className="w-full h-full overflow-hidden"
-      // autoplay={{
-      //   delay: 3000,
-      //   disableOnInteraction: true,
-      //   reverseDirection: false,
-      // }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: true,
+        reverseDirection: false,
+      }}
       pagination={{
         clickable: false,
       }}
-      loop={false}
-      freeMode={{
-        minimumVelocity: 0.5,
-        enabled: true,
-        momentumBounce: true,
-        sticky: true,
-      }}
-      mousewheel={{
-        releaseOnEdges: true,
-        thresholdDelta: 20,
-      }}
-      effect="cube"
-      cubeEffect={{
-        shadow: false,
-        slideShadows: false,
-      }}
-      // cardsEffect={{
-      //   perSlideOffset: 20,
-      //   perSlideRotate: 5,
-      // }}
-      modules={[Autoplay, Pagination, Mousewheel, FreeMode, EffectCube]}
+      spaceBetween={50}
+      slidesPerView={1}
+      className="w-full h-full duration-300"
+      navigation={true}
+      loop={true}
+      modules={[Autoplay, Pagination, Navigation]}
     >
       {allProjects.map((project: Project, index: number) => {
         return (
-          <SwiperSlide key={index} className={"w-screen h-[calc(100vh-5rem)]"}>
+          <SwiperSlide
+            key={index}
+            className={
+              "w-screen h-[calc(100vh-5rem)] flex flex-row justify-center"
+            }
+          >
             <ProjectCard index={index} project={project} />
           </SwiperSlide>
         );

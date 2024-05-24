@@ -16,7 +16,7 @@ export default function ProjectCard({
   return (
     <div
       className={
-        "ml-4 lg:w-[98%] xl:w-[90%] h-[75vh] flex flex-col lg:flex-row overflow-y-scroll pt-8 pb-12 lg:py-0 lg:overflow-y-auto rounded-xl bg-[#162037]"
+        "mx-auto lg:w-[98%] xl:w-[90%] h-[75vh] flex flex-col lg:flex-row overflow-y-scroll pt-8 pb-12 lg:py-0 lg:overflow-y-auto rounded-xl bg-[#162037]"
       }
     >
       <div className="hidden h-full w-1/2 lg:flex flex-col justify-center">
