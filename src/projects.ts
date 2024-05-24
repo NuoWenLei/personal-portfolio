@@ -42,6 +42,21 @@ export const currentProjects = [
       },
     ],
   },
+  {
+    id: "3d-to-minecraft",
+    title: "3D Model to Minecraft Build",
+    summary: "Bring any 3D Model into Minecraft!",
+    titleImage: "minecraft_frog.png",
+    skills: ["Machine Learning", "Data Science"],
+    tools: ["Open3D", "Streamlit", "NumPy", "Plotly"],
+    languages: ["Python"],
+    links: [
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/NuoWenLei/3D-to-minecraft",
+      },
+    ],
+  },
   // {
   //   id: "short-analytics",
   //   title: "(Ideation Phase) YouTube Shorts Analytics",
@@ -78,7 +93,7 @@ export const projects = [
       "I created a deep learning model that mimics a playable video game without training on any in-game inputs as part of my deep learning class. Basically, this model can turn videos into playable video games!",
     titleImage: "mario.gif",
     skills: ["Machine Learning"],
-    tools: ["TensorFlow", "Keras", "NumPy", "MatplotLib", "Google Colab"],
+    tools: ["TensorFlow", "Keras", "NumPy", "Matplotlib", "Google Colab"],
     languages: ["Python"],
     links: [
       {
@@ -111,11 +126,11 @@ export const projects = [
       },
       {
         name: "Hackathon Submission (Devpost)",
-        link: "https://devpost.com/software/telephoto",
+        url: "https://devpost.com/software/telephoto",
       },
       {
         name: "GitHub Repo",
-        link: "https://github.com/NuoWenLei/ai-image-telephone",
+        url: "https://github.com/NuoWenLei/ai-image-telephone",
       },
     ],
   },
