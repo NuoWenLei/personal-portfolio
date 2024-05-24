@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function HobbiesPage() {
   const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
   return (
-    <div className="flex flex-row flex-wrap justify-center relative mt-4 overflow-hidden">
+    <div className="flex flex-row flex-wrap justify-center relative mt-4 overflow-hidden h-screen pb-[20vh] z-0">
       <div className="relative h-[40%]">
         <div
           className={
@@ -55,13 +55,13 @@ export default function HobbiesPage() {
         <img src="./food1.jpg" alt="food" className="w-full h-full" />
       </div>
       <div className="h-[40%] object-cover overflow-hidden">
-        <img src="./sports1.jpg" alt="sports" className="w-full h-full" />
-      </div>
-      <div className="h-[40%] object-cover overflow-hidden">
         <img src="./animal2.jpg" alt="animal2" className="w-full h-full" />
       </div>
       <div className="h-[40%] object-cover overflow-hidden">
         <img src="./food3.jpg" alt="more food" className="w-full h-full" />
+      </div>
+      <div className="h-[40%] object-cover overflow-hidden">
+        <img src="./sports1.jpg" alt="sports" className="w-full h-full" />
       </div>
     </div>
   );

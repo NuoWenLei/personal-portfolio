@@ -21,9 +21,12 @@ export default function CredentialsPage() {
             href="./resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="text-sm underline underline-offset-2"
+            className="group text-sm underline underline-offset-2 inline-flex gap-1"
           >
             Resume
+            <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
+              <LinkIcon className="h-3 w-3" />
+            </span>
           </a>
         </div>
         <CredentialsSwiper />
@@ -57,6 +60,9 @@ function CredentialsSwiper() {
       </SwiperSlide>
       <SwiperSlide className={"w-full h-full"}>
         <EducationPage />
+      </SwiperSlide>
+      <SwiperSlide className={"w-full h-full"}>
+        <CertificationPage />
       </SwiperSlide>
       <SwiperSlide className={"w-full h-full"}>
         <OrganizationalPage />
@@ -233,6 +239,120 @@ function OrganizationalPage() {
           </div>
         }
       />
+    </div>
+  );
+}
+
+function CertificationPage() {
+  return (
+    <div className="h-full w-full flex flex-col px-16 mt-12">
+      <p className="text-2xl md:text-4xl font-bold">Online Certifications</p>
+      <div className="flex flex-row w-full justify-between flex-wrap">
+        <CredentialItem
+          imgUrl={"./ibm.webp"}
+          info={
+            <div className="flex flex-col w-1/2">
+              <a
+                href="https://coursera.org/share/1be6f256fc23a4c73d4ceff67b97abcf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                Advanced Data Science with IBM{" "}
+                <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md text-gray-300 mb-3">
+                <span className="text-gray-300 underline-none hidden xl:inline">
+                  Completion on{" "}
+                </span>{" "}
+                <span className="xl:underline underline-offset-2">
+                  March 2, 2021
+                </span>
+              </p>
+            </div>
+          }
+        />
+        <CredentialItem
+          imgUrl={"./dlai.png"}
+          info={
+            <div className="flex flex-col w-1/2">
+              <a
+                href="https://coursera.org/share/3cebb7deaa635a3f666a04ab455744ee"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                Machine Learning Engineering for Production (MLOps){" "}
+                <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md text-gray-300 mb-3">
+                <span className="text-gray-300 underline-none hidden xl:inline">
+                  Completion on{" "}
+                </span>{" "}
+                <span className="xl:underline underline-offset-2">
+                  January 11, 2023
+                </span>
+              </p>
+            </div>
+          }
+        />
+        <CredentialItem
+          imgUrl={"./umich.png"}
+          info={
+            <div className="flex flex-col w-1/2">
+              <a
+                href="https://coursera.org/share/725f46dbb4a9614748e3b5c0d33302c0"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                Applied Data Science with Python{" "}
+                <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md text-gray-300 mb-3">
+                <span className="text-gray-300 underline-none hidden xl:inline">
+                  Completion on{" "}
+                </span>{" "}
+                <span className="xl:underline underline-offset-2">
+                  January 21, 2021
+                </span>
+              </p>
+            </div>
+          }
+        />
+        <CredentialItem
+          imgUrl={"./harvard.jpeg"}
+          info={
+            <div className="flex flex-col w-1/2">
+              <a
+                href="https://courses.edx.org/certificates/5a866da5951e4a2e9ec1f2ca9c5f62dc"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xl md:text-2xl font-semibold inline-flex gap-2"
+              >
+                CS50W: CS50's Web Programming{" "}
+                <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
+                  <LinkIcon className="h-4 w-4" />
+                </span>
+              </a>
+              <p className="text-md text-gray-300 mb-3">
+                <span className="text-gray-300 underline-none hidden xl:inline">
+                  Completion on{" "}
+                </span>{" "}
+                <span className="xl:underline underline-offset-2">
+                  January 11, 2021
+                </span>
+              </p>
+            </div>
+          }
+        />
+      </div>
     </div>
   );
 }

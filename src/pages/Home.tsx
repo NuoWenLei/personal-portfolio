@@ -4,8 +4,9 @@ import ProjectSwiper from "../components/ProjectSwiper";
 import SocialPage from "../components/SocialPage";
 import CredentialsPage from "../components/CredentialsPage";
 import { Bars3Icon, WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
-import { currentProjects, projects } from "../projects";
+import { currentProjects, projectArchives, projects } from "../projects";
 import HobbiesPage from "../components/HobbiesPage";
+import ProjectFilter from "../components/ProjectFilter";
 
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
@@ -30,6 +31,8 @@ export default function Home() {
   const hobbyVis = useOnScreen(hobbyRef);
   const connectRef = useRef<HTMLDivElement>(null);
   const connectVis = useOnScreen(connectRef);
+  const archiveRef = useRef<HTMLDivElement>(null);
+  const archiveVis = useOnScreen(archiveRef);
 
   const refMap: { [key: string]: React.RefObject<HTMLDivElement> } =
     useMemo(() => {
@@ -40,6 +43,7 @@ export default function Home() {
         Credentials: credentialsRef,
         Hobbies: hobbyRef,
         Socials: connectRef,
+        Archive: archiveRef,
       };
     }, [
       homeRef,
@@ -48,6 +52,7 @@ export default function Home() {
       credentialsRef,
       hobbyRef,
       connectRef,
+      archiveRef,
     ]);
 
   const visibilityMap: { [key: string]: boolean } = useMemo(() => {
@@ -58,6 +63,7 @@ export default function Home() {
       Credentials: credentialsVis,
       Hobbies: hobbyVis,
       Socials: connectVis,
+      Archive: archiveVis,
     };
   }, [
     homeVis,
@@ -66,6 +72,7 @@ export default function Home() {
     credentialsVis,
     hobbyVis,
     connectVis,
+    archiveVis,
   ]);
 
   const pageSequence: string[] = useMemo(() => {
@@ -76,6 +83,7 @@ export default function Home() {
       "Credentials",
       "Socials",
       "Hobbies",
+      "Archive",
     ];
   }, []);
 
@@ -87,6 +95,7 @@ export default function Home() {
       "Past Highlights",
       "Socials",
       "Hobbies",
+      "Archive",
     ];
   }, []);
 
@@ -105,6 +114,24 @@ export default function Home() {
       setBlockDisplay(false);
     }
   }, [windowSize]);
+
+  useEffect(() => {
+    // callback function to call when event triggers
+    const onPageLoad = () => {
+      console.log("page loaded");
+      setTimeout(() => setSidebarState(true), 1500);
+      setTimeout(() => setSidebarState(false), 3500);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad, false);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
 
   // useEffect(() => {
   //   if (fullPageRef.current == null) {
@@ -174,7 +201,7 @@ export default function Home() {
       </div>
       <div
         className={
-          "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-200 flex flex-col justify-start gap-6 pl-16 " +
+          "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-300 flex flex-col justify-start gap-6 pl-16 " +
           (sidebarState ? " z-20 opacity-100" : " -z-10 opacity-0")
         }
         onMouseLeave={() => setSidebarState(false)}
@@ -270,12 +297,21 @@ export default function Home() {
       </div>
       <div
         ref={hobbyRef}
-        className="w-full h-full flex flex-col snap-center bg-[#0D1321] px-12 gap-4 pt-8"
+        className="relative z-0 w-full h-[120vh] flex flex-col snap-start bg-[#0D1321] px-12 gap-4 pt-8 -mb-[20vh]"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Hobbies
         </div>
         <HobbiesPage />
+      </div>
+      <div
+        ref={archiveRef}
+        className="relative z-10 w-full h-fit pb-20 flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent via-[#0D1321]/80 via-[5vh] to-[#0D1321] to-[8vh]"
+      >
+        <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
+          Project Archives
+        </div>
+        <ProjectFilter projects={projectArchives} />
       </div>
     </div>
   );
