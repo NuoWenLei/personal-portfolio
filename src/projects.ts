@@ -33,7 +33,15 @@ export const currentProjects = [
       "My friends and I are creating a platform for students to sell and trade second-hand items. Our vision is to reduce waste and increase the efficiency of the markets around campuses.",
     titleImage: "hander.png",
     skills: ["Software Engineering"],
-    tools: ["Firebase", "Next.js", "React.js", "React Native"],
+    tools: [
+      "Firebase",
+      "Next.js",
+      "React.js",
+      "React Native",
+      "Vercel",
+      "Tailwind",
+      "Google Cloud Services",
+    ],
     languages: ["Typescript"],
     links: [
       {
@@ -117,7 +125,15 @@ export const projects = [
       "As part of the Hack@Brown Hackathon, my friends and I created an online telephone game with a twist ... you can only communicate through AI-generated images!",
     titleImage: "telephoto.png",
     skills: ["Software Engineering"],
-    tools: ["Firebase", "Next.js", "React.js"],
+    tools: [
+      "Firebase",
+      "Next.js",
+      "React.js",
+      "Vercel",
+      "Node.js",
+      "Tailwind",
+      "Google Cloud Services",
+    ],
     languages: ["Typescript"],
     links: [
       {
