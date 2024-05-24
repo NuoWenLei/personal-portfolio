@@ -43,20 +43,26 @@ export default function ProjectCard({
           <p>{project.summary}</p>
           <div className="flex flex-row flex-wrap gap-4">
             {project.skills.map((skill: string) => (
-              <span className={"rounded-full px-4 " + skillColors[skill]}>
+              <span
+                className={"rounded-full px-4 " + skillColors[skill]}
+                key={skill}
+              >
                 {skill}
               </span>
             ))}
           </div>
           <div className="flex flex-row flex-wrap gap-4">
             {project.tools.map((tool: string) => (
-              <span className={"rounded-full px-4 bg-[#748CAB]"}>{tool}</span>
+              <span className={"rounded-full px-4 bg-[#748CAB]"} key={tool}>
+                {tool}
+              </span>
             ))}
           </div>
           <div className="flex flex-col gap-4">
             {project.links.map((link: ProjectLink) => {
               return (
                 <a
+                  key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"

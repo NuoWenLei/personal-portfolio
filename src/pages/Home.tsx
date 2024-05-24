@@ -43,7 +43,7 @@ export default function Home() {
         Credentials: credentialsRef,
         Hobbies: hobbyRef,
         Socials: connectRef,
-        Archive: archiveRef,
+        "Project Archives": archiveRef,
       };
     }, [
       homeRef,
@@ -63,7 +63,7 @@ export default function Home() {
       Credentials: credentialsVis,
       Hobbies: hobbyVis,
       Socials: connectVis,
-      Archive: archiveVis,
+      "Project Archives": archiveVis,
     };
   }, [
     homeVis,
@@ -83,7 +83,7 @@ export default function Home() {
       "Credentials",
       "Socials",
       "Hobbies",
-      "Archive",
+      "Project Archives",
     ];
   }, []);
 
@@ -95,7 +95,7 @@ export default function Home() {
       "Past Highlights",
       "Socials",
       "Hobbies",
-      "Archive",
+      "Project Archives",
     ];
   }, []);
 
@@ -115,23 +115,23 @@ export default function Home() {
     }
   }, [windowSize]);
 
-  useEffect(() => {
-    // callback function to call when event triggers
-    const onPageLoad = () => {
-      console.log("page loaded");
-      setTimeout(() => setSidebarState(true), 1500);
-      setTimeout(() => setSidebarState(false), 3500);
-    };
+  // useEffect(() => {
+  //   // callback function to call when event triggers
+  //   const onPageLoad = () => {
+  //     // console.log("page loaded");
+  //     setTimeout(() => setSidebarState(true), 1500);
+  //     setTimeout(() => setSidebarState(false), 3500);
+  //   };
 
-    // Check if the page has already loaded
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad, false);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener("load", onPageLoad);
-    }
-  }, []);
+  //   // Check if the page has already loaded
+  //   if (document.readyState === "complete") {
+  //     onPageLoad();
+  //   } else {
+  //     window.addEventListener("load", onPageLoad, false);
+  //     // Remove the event listener when component unmounts
+  //     return () => window.removeEventListener("load", onPageLoad);
+  //   }
+  // }, []);
 
   // useEffect(() => {
   //   if (fullPageRef.current == null) {
@@ -206,9 +206,10 @@ export default function Home() {
         }
         onMouseLeave={() => setSidebarState(false)}
       >
-        {pageSequence.map((page: string) => {
+        {pageSequence.map((page: string, index) => {
           return (
             <p
+              key={index}
               className={
                 "cursor-pointer duration-300 underline-offset-4 hover:opacity-100 " +
                 (visiblePage !== page ? "opacity-50" : " underline ")
@@ -276,7 +277,7 @@ export default function Home() {
       </div>
       <div
         ref={credentialsRef}
-        className="relative w-screen h-[140vh] snap-center bg-brown_uni bg-cover bg-fixed -my-[20vh] z-0"
+        className="relative w-screen h-[140vh] snap-center snap-always bg-brown_uni bg-cover bg-fixed -my-[20vh] z-0"
       >
         {/* <img
           src={"./brown_uni.jpeg"}

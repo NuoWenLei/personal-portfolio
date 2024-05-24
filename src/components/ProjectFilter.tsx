@@ -31,7 +31,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
           }
         });
 
-        if (entries.length == 0) {
+        if (entries.length === 0) {
           return true;
         }
 
@@ -54,13 +54,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
         .filter(createFilter(selectedSkills, "skills", excludePartial))
         .filter(createFilter(selectedTools, "tools", excludePartial))
     );
-  }, [
-    selectedSkills,
-    selectedTools,
-    excludePartial,
-    filteredProjects,
-    projects,
-  ]);
+  }, [selectedSkills, selectedTools, excludePartial, projects]);
 
   return (
     <>
@@ -79,7 +73,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
           </button>
         </div>
       )}
-      <div className="relative ml-4 w-full h-full flex flex-row gap-x-6">
+      <div className="relative ml-4 w-full h-full flex flex-row gap-x-6 bg-[#0D1321]">
         <div className="flex flex-col w-1/3 h-[95%] gap-y-6 p-4 rounded-lg bg-[#162037] overflow-y-scroll">
           <h3 className="font-medium text-xl">Filters</h3>
           <button
@@ -100,6 +94,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
               {["Machine Learning", "Data Science", "Software Engineering"].map(
                 (skill: string) => (
                   <button
+                    key={skill}
                     type="button"
                     onClick={() => {
                       if (selectedSkills.includes(skill)) {
@@ -126,6 +121,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
             <div className="flex flex-row flex-wrap gap-4">
               {tools.map((tool: string) => (
                 <button
+                  key={tool}
                   type="button"
                   onClick={() => {
                     if (selectedTools.includes(tool)) {
@@ -147,9 +143,10 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap w-3/4 overflow-y-scroll gap-x-6 gap-y-4 items-start h-min max-h-5/6">
+        <div className="flex flex-row flex-wrap w-3/4 overflow-y-scroll gap-x-6 gap-y-4 items-start h-min max-h-5/6 bg-[#0D1321]">
           {filteredProjects.map((p, i) => (
             <MiniProjectCard
+              key={i}
               project={p}
               index={i}
               onClick={() => {
