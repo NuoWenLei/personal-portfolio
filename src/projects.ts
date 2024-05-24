@@ -56,6 +56,30 @@ export const currentProjects = [
 
 export const projects = [
   {
+    id: "dynamic-deep-learning",
+    title: "Dynamic Environment Generation with Image Diffusion",
+    summary:
+      "I created a deep learning model that mimics a playable video game without training on any in-game inputs as part of my deep learning class. Basically, this model can turn videos into playable video games!",
+    titleImage: "mario.gif",
+    skills: ["Machine Learning"],
+    tools: ["TensorFlow", "NumPy", "MatplotLib", "Google Colab"],
+    languages: ["Python"],
+    links: [
+      {
+        name: "Official Writeup",
+        url: "https://docs.google.com/document/d/19hoKxmYsMC61kqL0uESkP32rdQ0Y5HXupEyuVd7eHJo/edit?usp=sharing",
+      },
+      {
+        name: "GitHub Repo",
+        url: "https://github.com/NuoWenLei/deep-learning-final-project",
+      },
+      {
+        name: "Devpost Submission",
+        url: "https://devpost.com/software/dynamic-environment-generation-in-classic-video-games",
+      },
+    ],
+  },
+  {
     id: "stock-pred",
     title: "Quantitative Stock Price Analysis and Prediction",
     summary:
