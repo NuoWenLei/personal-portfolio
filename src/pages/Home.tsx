@@ -11,6 +11,7 @@ import ProjectFilter from "../components/ProjectFilter";
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
   const [visiblePage, setVisiblePage] = useState<string>("Home");
+  const [promoClicked, setPromoClicked] = useState<boolean>(false);
   // const [scrollTimeout, setScrollTimeout] = useState<any>(null);
 
   const windowSize = useWindowSize();
@@ -199,6 +200,33 @@ export default function Home() {
       >
         <Bars3Icon className="h-12 w-12 cursor-pointer" />
       </div>
+      <button
+        onClick={() => {
+          setPromoClicked(true);
+          onScrollToRef(archiveRef);
+        }}
+        className={
+          "fixed group top-11 z-0 right-24 xl:right-28 duration-150 w-fit outline-none " +
+          (visiblePage !== "Home" && "opacity-0")
+        }
+      >
+        {!promoClicked && (
+          <div className="absolute -right-2 -top-2">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+          </div>
+        )}
+        <p className="text-white underline underline-offset-4 group-hover:decoration-white decoration-transparent duration-150">
+          Check out my new project archive!
+        </p>
+      </button>
+      {visiblePage !== "Home" && (
+        <div className="fixed right-24 xl:right-28 top-11 bg-transparent text-transparent z-0	select-none ">
+          Check out my new project archive!
+        </div>
+      )}
       <div
         className={
           "fixed pt-40 bg-black/70 top-0 right-0 w-[20vw] h-screen duration-300 flex flex-col justify-start gap-6 pl-16 " +
