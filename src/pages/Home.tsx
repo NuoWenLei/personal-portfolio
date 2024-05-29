@@ -307,7 +307,7 @@ export default function Home() {
       </div>
       <div
         ref={archiveRef}
-        className="relative z-10 w-full h-fit pb-20 flex flex-col snap-start px-12 gap-4 pt-8 bg-gradient-to-b from-transparent via-[#0D1321]/80 via-[5vh] to-[#0D1321] to-[8vh]"
+        className="relative z-10 w-full h-fit pb-20 flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent via-[#0D1321]/80 via-[5vh] to-[#0D1321] to-[8vh]"
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Project Archives
