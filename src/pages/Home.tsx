@@ -115,7 +115,7 @@ export default function Home() {
       newURI = newURI + "&project=" + encodeURIComponent(visibleProject);
     }
 
-    window.history.replaceState(null, `Hander - ${visiblePage}`, newURI);
+    window.history.replaceState(null, `Nuo Wen Lei - ${visiblePage}`, newURI);
   }, [visiblePage, visibleProject]);
 
   useEffect(() => {
