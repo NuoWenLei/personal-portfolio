@@ -10,7 +10,13 @@ import MiniProjectCard from "./MiniProjectCard";
 import ProjectCard from "./ProjectCard";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
-export default function ProjectFilter({ projects }: { projects: Project[] }) {
+export default function ProjectFilter({
+  projects,
+  setVisibleProject,
+}: {
+  projects: Project[];
+  setVisibleProject: (s: string) => void;
+}) {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [excludePartial, setExcludePartial] = useState<boolean>(false);
@@ -73,6 +79,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
             onClick={() => {
               setShowProject(false);
               setSelectedProject(undefined);
+              setVisibleProject("");
             }}
           >
             <XMarkIcon />
@@ -164,6 +171,7 @@ export default function ProjectFilter({ projects }: { projects: Project[] }) {
               onClick={() => {
                 setSelectedProject(p);
                 setShowProject(true);
+                setVisibleProject(p.title);
               }}
             />
           ))}

@@ -11,6 +11,7 @@ import ProjectFilter from "../components/ProjectFilter";
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
   const [visiblePage, setVisiblePage] = useState<string>("Home");
+  const [visibleProject, setVisibleProject] = useState<string>("");
   const [promoClicked, setPromoClicked] = useState<boolean>(false);
   // const [scrollTimeout, setScrollTimeout] = useState<any>(null);
 
@@ -109,6 +110,15 @@ export default function Home() {
   }, [visibilityMap, checkSequence]);
 
   useEffect(() => {
+    let newURI = `/?page=${encodeURIComponent(visiblePage)}`;
+    if (visibleProject !== "") {
+      newURI = newURI + "&project=" + encodeURIComponent(visibleProject);
+    }
+
+    window.history.replaceState(null, `Hander - ${visiblePage}`, newURI);
+  }, [visiblePage, visibleProject]);
+
+  useEffect(() => {
     if (windowSize[0] < 1024) {
       setBlockDisplay(true);
     } else {
@@ -176,7 +186,7 @@ export default function Home() {
 
   if (blockDisplay) {
     return (
-      <div className="w-screen h-screen flex flex-col items-center justify-center text-white/70">
+      <div className="w-screen h-screen flex flex-col items-center justify-center text-white/70 bg-[#0D1321]/90">
         <WrenchScrewdriverIcon className="h-40 w-40" />
         <p className="text-2xl font-bold flex md:hidden">
           Constructing Phone view,
@@ -340,7 +350,10 @@ export default function Home() {
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Project Archives
         </div>
-        <ProjectFilter projects={projectArchives} />
+        <ProjectFilter
+          projects={projectArchives}
+          setVisibleProject={setVisibleProject}
+        />
       </div>
     </div>
   );
