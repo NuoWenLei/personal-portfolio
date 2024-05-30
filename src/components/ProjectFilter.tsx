@@ -9,6 +9,7 @@ import {
 import MiniProjectCard from "./MiniProjectCard";
 import ProjectCard from "./ProjectCard";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import ReactGA from "react-ga4";
 
 export default function ProjectFilter({
   projects,
@@ -114,6 +115,10 @@ export default function ProjectFilter({
                         selectedSkills.filter((v) => v !== skill.name)
                       );
                     } else {
+                      ReactGA.event({
+                        category: "User",
+                        action: `Filtered by Skill: ${skill.name}`,
+                      });
                       setSelectedSkills([...selectedSkills, skill.name]);
                     }
                   }}
@@ -143,6 +148,10 @@ export default function ProjectFilter({
                         selectedTools.filter((v) => v !== tool.name)
                       );
                     } else {
+                      ReactGA.event({
+                        category: "User",
+                        action: `Filtered by Tool: ${tool.name}`,
+                      });
                       setSelectedTools([...selectedTools, tool.name]);
                     }
                   }}

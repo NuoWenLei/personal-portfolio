@@ -7,6 +7,7 @@ import { Bars3Icon, WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
 import { currentProjects, projectArchives, projects } from "../projects";
 import HobbiesPage from "../components/HobbiesPage";
 import ProjectFilter from "../components/ProjectFilter";
+import ReactGA from "react-ga4";
 
 export default function Home() {
   const [sidebarState, setSidebarState] = useState<boolean>(false);
@@ -114,12 +115,13 @@ export default function Home() {
     if (visibleProject !== "") {
       newURI = newURI + "&project=" + encodeURIComponent(visibleProject);
     }
-
+    ReactGA.send({ hitType: "pageview", page: newURI });
     window.history.replaceState(null, "", newURI);
   }, [visiblePage, visibleProject]);
 
   useEffect(() => {
     if (windowSize[0] < 1024) {
+      ReactGA.send({ hitType: "pageview", page: "/mobile" });
       setBlockDisplay(true);
     } else {
       setBlockDisplay(false);
@@ -212,6 +214,10 @@ export default function Home() {
       </div>
       <button
         onClick={() => {
+          ReactGA.event({
+            category: "User",
+            action: "Clicked Promo",
+          });
           setPromoClicked(true);
           onScrollToRef(archiveRef);
         }}
