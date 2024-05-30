@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import ReactGA from "react-ga4";
-ReactGA.initialize("Your-Measurement-ID");
+ReactGA.initialize("G-1WXR78DSGE");
 
 export default function App() {
   return (
