@@ -111,7 +111,7 @@ export default function Home() {
   }, [visibilityMap, checkSequence]);
 
   useEffect(() => {
-    let newURI = `/?page=${encodeURIComponent(visiblePage)}`;
+    let newURI = `?page=${encodeURIComponent(visiblePage)}`;
     if (visibleProject !== "") {
       newURI = newURI + "&project=" + encodeURIComponent(visibleProject);
     }
@@ -121,7 +121,7 @@ export default function Home() {
 
   useEffect(() => {
     if (windowSize[0] < 1024) {
-      ReactGA.send({ hitType: "pageview", page: "/mobile" });
+      ReactGA.send({ hitType: "pageview", page: "mobile" });
       setBlockDisplay(true);
     } else {
       setBlockDisplay(false);
