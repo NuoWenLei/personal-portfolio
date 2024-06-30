@@ -204,7 +204,7 @@ export default function Home() {
   return (
     <div
       ref={fullPageRef}
-      className="w-screen h-screen overflow-y-scroll snap-y snap-mandatory relative bg-transparent"
+      className="w-screen h-screen overflow-y-scroll relative bg-transparent"
     >
       <div
         className="fixed top-8 right-8 z-30"
@@ -273,7 +273,7 @@ export default function Home() {
           src={"./personal_photo.jpeg"}
           className="w-screen h-[120%] absolute object-cover -z-10"
         /> */}
-        <div className="w-screen h-full bg-[#0D1321]/50 pb-[20vh]">
+        <div className="w-screen h-full bg-[#0D1321]/40 pb-[20vh]">
           <div className="flex flex-col h-5/6 mr-auto justify-end xl:justify-center ml-16 pt-12 text-gray-600 gap-0">
             <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-row flex inline-flex pb-5 mix-blend-screen">
               Hello World!
@@ -327,7 +327,7 @@ export default function Home() {
           src={"./brown_uni.jpeg"}
           className="w-screen h-[140%] absolute object-cover -z-20 -top-[20%]"
         /> */}
-        <div className="w-full h-full flex flex-row bg-[#0D1321]/80 py-[20vh]">
+        <div className="w-full h-full flex flex-row bg-[#0D1321]/50 py-[20vh]">
           <CredentialsPage />
         </div>
       </div>
