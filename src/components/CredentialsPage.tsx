@@ -21,7 +21,7 @@ export default function CredentialsPage() {
             href="./resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="group text-sm underline underline-offset-2 inline-flex gap-1"
+            className="group text-base underline underline-offset-2 inline-flex gap-1"
           >
             Resume
             <span className="my-auto group-hover:opacity-100 opacity-0 duration-300">
