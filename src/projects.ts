@@ -76,7 +76,3 @@ export const allSkills = Object.entries(skillCount).map((tc) => {
     count: tc[1],
   } as Category;
 });
-
-// export const tools = projectArchives
-//   .flatMap((p) => p.tools)
-//   .filter((value, index, array) => array.indexOf(value) === index);

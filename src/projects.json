@@ -19,6 +19,30 @@
     "status": "current"
   },
   {
+    "id": "dungeongpt",
+    "title": "DungeonGPT - Dungeon Crawler with ChatGPT",
+    "summary": "As part of a Microsoft Intern Game Jam event, my friends and I created a dungeon crawler game navigated through a natural language interface powered by GPT-4o.",
+    "titleImage": "dungeongpt.png",
+    "skills": ["Software Engineering"],
+    "tools": ["Unity", "OpenAI", "FastAPI", "Microsoft Azure"],
+    "languages": ["C#", "Python"],
+    "links": [
+      {
+        "name": "Play DungeonGPT",
+        "url": "https://realcolossal.itch.io/dungeongpt"
+      },
+      {
+        "name": "FastAPI GitHub Repo",
+        "url": "https://github.com/NuoWenLei/InternGameJam2024Backend"
+      },
+      {
+        "name": "FastAPI Backend Documentation",
+        "url": "https://intern-game-jam-openai-ddddaahbfyd4epc6.eastus-01.azurewebsites.net/docs"
+      }
+    ],
+    "status": "highlight"
+  },
+  {
     "id": "3d-to-minecraft",
     "title": "3D Model to Minecraft Build",
     "summary": "Bring any 3D Model into Minecraft!",
