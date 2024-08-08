@@ -188,7 +188,9 @@ export default function Home() {
 
   if (blockDisplay) {
     return (
-      <div className="w-screen h-screen flex flex-col items-center justify-center text-white/70 bg-[#0D1321]/90">
+      <div
+        className={`w-screen h-screen flex flex-col items-center justify-center text-white/70 bg-color-bg/90`}
+      >
         <WrenchScrewdriverIcon className="h-40 w-40" />
         <p className="text-2xl font-bold flex md:hidden">
           Constructing Phone view,
@@ -273,26 +275,19 @@ export default function Home() {
           src={"./personal_photo.jpeg"}
           className="w-screen h-[120%] absolute object-cover -z-10"
         /> */}
-        <div className="w-screen h-full bg-[#0D1321]/40 pb-[20vh]">
-          <div className="flex flex-col h-5/6 mr-auto justify-end xl:justify-center ml-16 pt-12 text-gray-600 gap-0">
-            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-row flex inline-flex pb-5 mix-blend-screen">
-              Hello World!
-            </div>
-            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex inline-flex md:gap-4 pb-5 lg:pl-12">
-              <span className="inline md:hidden mix-blend-screen">
-                My name is{" "}
-              </span>
-              <span className="hidden md:inline mix-blend-screen">I'm </span>
-              <p className="text-[#599BFF] brightness-110">Nuo Wen Lei</p>
-            </div>
-            <div className="mix-blend-screen font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 h-16 lg:pl-24 mb-5 md:mb-0 lg:mb-5">
-              <span className="inline">I bring</span>
+        <div id="home" className={`w-screen h-full bg-color-bg/30 pb-[20vh]`}>
+          <div className="flex flex-col h-[90%] xl:h-full mr-auto justify-end xl:justify-center pl-16 xl:pt-24 text-gray-600 gap-0">
+            <p className="ml-18 xl:ml-24 font-bold text-8xl xl:text-9xl text-[#6aa5ff] brightness-110 mb-5 mix-blend-lighten">
+              Nuo Wen Lei
+            </p>
+            <div className="mix-blend-screen font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 h-16 ml-18 xl:ml-24 mb-5 md:mb-0 lg:mb-5">
+              <span className="inline">bringing</span>
 
               <span className="inline text-transparent bg-clip-text bg-gradient-to-r from-[#12cafc] to-[#f1a2fa] to-70%">
                 Ideas to Life
               </span>
             </div>
-            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 lg:pl-36">
+            <div className="font-bold text-4xl md:text-5xl lg:text-6xl flex-col md:flex-row flex md:inline-flex md:gap-4 ml-18 xl:ml-24">
               <span className="inline mix-blend-screen">with</span>
               <div className="h-32 md:h-16 overflow-hidden">
                 <HomeSwiper />
@@ -303,7 +298,7 @@ export default function Home() {
       </div>
       <div
         ref={currentProjectsRef}
-        className="w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent to-[#0D1321] to-[20vh] z-10"
+        className={`w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent to-color-bg to-[20vh] z-10`}
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Current Projects
@@ -312,7 +307,7 @@ export default function Home() {
       </div>
       <div
         ref={pastProjectsRef}
-        className="relative z-10 w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b to-transparent from-[#0D1321] from-[80vh]"
+        className={`relative z-10 w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b to-transparent from-color-bg from-[80vh]`}
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Past Highlights
@@ -327,13 +322,13 @@ export default function Home() {
           src={"./brown_uni.jpeg"}
           className="w-screen h-[140%] absolute object-cover -z-20 -top-[20%]"
         /> */}
-        <div className="w-full h-full flex flex-row bg-[#0D1321]/50 py-[20vh]">
+        <div className={`w-full h-full flex flex-row bg-color-bg/50 py-[20vh]`}>
           <CredentialsPage />
         </div>
       </div>
       <div
         ref={connectRef}
-        className="relative w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent to-[#0D1321] to-[20vh] z-10"
+        className={`relative w-full h-full flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent to-color-bg to-[20vh] z-10`}
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4 w-full mt-4 font-semibold">
           Connect With Me!
@@ -342,7 +337,7 @@ export default function Home() {
       </div>
       <div
         ref={hobbyRef}
-        className="relative z-0 w-full h-[120vh] flex flex-col snap-start bg-[#0D1321] px-12 gap-4 pt-8 -mb-[20vh]"
+        className={`relative z-0 w-full h-[120vh] flex flex-col snap-start bg-color-bg px-12 gap-4 pt-8 -mb-[20vh]`}
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Hobbies
@@ -351,7 +346,7 @@ export default function Home() {
       </div>
       <div
         ref={archiveRef}
-        className="relative z-10 w-full h-fit pb-20 flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent via-[#0D1321]/80 via-[5vh] to-[#0D1321] to-[8vh]"
+        className={`relative z-10 w-full h-fit pb-20 flex flex-col snap-center px-12 gap-4 pt-8 bg-gradient-to-b from-transparent via-color-bg/80 via-[5vh] to-color-bg to-[8vh]`}
       >
         <div className="text-gray-200 text-4xl md:text-6xl pl-4  w-full mt-4 font-semibold">
           Project Archives

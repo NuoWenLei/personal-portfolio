@@ -21,7 +21,9 @@ export default function MiniProjectCard({
         src={project.titleImage}
         alt={project.title}
       />
-      <div className="relative p-4 bg-[#0D1321]/80 w-full h-full z-10 font-medium">
+      <div
+        className={`relative p-4 bg-color-bg/80 w-full h-full z-10 font-medium`}
+      >
         {project.title}
       </div>
     </button>

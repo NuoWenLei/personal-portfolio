@@ -52,24 +52,36 @@ export default function ProjectCard({
             ))}
           </div>
           <div className="flex flex-row flex-wrap gap-4">
+            {project.languages.map((lang: string) => (
+              <span className={"rounded-full px-4 bg-[#40526a]"} key={lang}>
+                {lang}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-row flex-wrap gap-4">
             {project.tools.map((tool: string) => (
               <span className={"rounded-full px-4 bg-[#748CAB]"} key={tool}>
                 {tool}
               </span>
             ))}
           </div>
-          <div className="flex flex-col gap-4">
-            {project.links.map((link: ProjectLink) => {
+          <div className="flex flex-row flex-wrap justify-start gap-x-6 gap-y-3">
+            {project.links.map((link: ProjectLink, i) => {
               return (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4 hover:text-white text-white/70 duration-200"
-                >
-                  {link.name}
-                </a>
+                <>
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:text-white text-white/70 duration-200"
+                  >
+                    {link.name}
+                  </a>
+                  {/* {i < project.links.length - 1 && (
+                    <p className="text-xl text-white/70">|</p>
+                  )} */}
+                </>
               );
             })}
           </div>

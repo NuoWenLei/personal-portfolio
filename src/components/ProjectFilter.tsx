@@ -5,6 +5,7 @@ import {
   allTools,
   allSkills,
   Category,
+  allLanguages,
 } from "../projects";
 import MiniProjectCard from "./MiniProjectCard";
 import ProjectCard from "./ProjectCard";
@@ -20,6 +21,7 @@ export default function ProjectFilter({
 }) {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
   const [excludePartial, setExcludePartial] = useState<boolean>(false);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   const [showProject, setShowProject] = useState<boolean>(false);
@@ -30,7 +32,7 @@ export default function ProjectFilter({
     function createFilter(
       // project: Project,
       entries: string[],
-      attribute: "skills" | "tools",
+      attribute: "skills" | "tools" | "languages",
       excludePartialMatch: boolean
     ) {
       function genFilter(project: Project) {
@@ -66,13 +68,22 @@ export default function ProjectFilter({
       projects
         .filter(createFilter(selectedSkills, "skills", excludePartial))
         .filter(createFilter(selectedTools, "tools", excludePartial))
+        .filter(createFilter(selectedLanguages, "languages", excludePartial))
     );
-  }, [selectedSkills, selectedTools, excludePartial, projects]);
+  }, [
+    selectedSkills,
+    selectedTools,
+    selectedLanguages,
+    excludePartial,
+    projects,
+  ]);
 
   return (
     <>
       {showProject && selectedProject && (
-        <div className="fixed w-screen h-screen inset-0 flex flex-row justify-center items-center z-50 bg-[#0D1321]/80">
+        <div
+          className={`fixed w-screen h-screen inset-0 flex flex-row justify-center items-center z-50 bg-color-bg/80`}
+        >
           <ProjectCard index={100000} project={selectedProject} />
           <button
             type="button"
@@ -87,12 +98,14 @@ export default function ProjectFilter({
           </button>
         </div>
       )}
-      <div className="relative ml-4 w-full h-full flex flex-row gap-x-6 bg-[#0D1321]">
+      <div
+        className={`relative ml-4 w-full h-full flex flex-row gap-x-6 bg-color-bg`}
+      >
         <div className="flex flex-col w-1/3 h-[95%] gap-y-6 p-4 rounded-lg bg-[#162037] overflow-y-scroll">
           <h3 className="font-medium text-xl">Filters</h3>
           <button
             type="button"
-            className="flex flex-row items-center gap-x-3"
+            className="flex flex-row items-center gap-x-3 w-fit"
             onClick={() => setExcludePartial(!excludePartial)}
           >
             <div
@@ -131,8 +144,44 @@ export default function ProjectFilter({
                   }
                 >
                   {skill.name}
-                  <span className="rounded-full px-1 text-sm bg-[#e8eefa] text-[#0D1321] ml-2">
+                  <span
+                    className={`rounded-full px-1 text-sm bg-[#e8eefa] text-color-bg ml-2`}
+                  >
                     {skill.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-row flex-wrap gap-4">
+              {allLanguages.map((lang: Category) => (
+                <button
+                  key={lang.name}
+                  type="button"
+                  onClick={() => {
+                    if (selectedLanguages.includes(lang.name)) {
+                      setSelectedLanguages(
+                        selectedLanguages.filter((v) => v !== lang.name)
+                      );
+                    } else {
+                      ReactGA.event({
+                        category: "User",
+                        action: `Filtered by Language: ${lang.name}`,
+                      });
+                      setSelectedLanguages([...selectedLanguages, lang.name]);
+                    }
+                  }}
+                  className={
+                    "rounded-full px-4 bg-[#40526a] outline-none " +
+                    (selectedLanguages.includes(lang.name)
+                      ? " ring-2 ring-white ring-offset-2 ring-offset-[#0D4132]"
+                      : "")
+                  }
+                >
+                  {lang.name}{" "}
+                  <span
+                    className={`rounded-full px-1 text-sm bg-white/50 text-color-bg ml-0.5`}
+                  >
+                    {lang.count}
                   </span>
                 </button>
               ))}
@@ -163,7 +212,9 @@ export default function ProjectFilter({
                   }
                 >
                   {tool.name}{" "}
-                  <span className="rounded-full px-1 text-sm bg-[#e8eefa] text-[#0D1321] ml-0.5">
+                  <span
+                    className={`rounded-full px-1 text-sm bg-[#e8eefa] text-color-bg ml-0.5`}
+                  >
                     {tool.count}
                   </span>
                 </button>
@@ -171,7 +222,9 @@ export default function ProjectFilter({
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap w-3/4 overflow-y-scroll gap-x-6 gap-y-4 items-start h-min max-h-5/6 bg-[#0D1321]">
+        <div
+          className={`flex flex-row flex-wrap w-3/4 overflow-y-scroll gap-x-6 gap-y-4 items-start h-min max-h-5/6 bg-color-bg`}
+        >
           {filteredProjects.map((p, i) => (
             <MiniProjectCard
               key={i}

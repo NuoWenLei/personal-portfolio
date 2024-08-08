@@ -42,6 +42,7 @@ export const projectArchives: Project[] = allProjects;
 
 let tools = projectArchives.flatMap((p) => p.tools);
 let skills = projectArchives.flatMap((p) => p.skills);
+let languages = projectArchives.flatMap((p) => p.languages);
 
 let toolCount = Object.fromEntries(
   tools
@@ -55,12 +56,22 @@ let skillCount = Object.fromEntries(
     .map((t) => [t, 0])
 );
 
+let languageCount = Object.fromEntries(
+  languages
+    .filter((value, index, array) => array.indexOf(value) === index)
+    .map((t) => [t, 0])
+);
+
 tools.forEach((t) => {
   toolCount[t] += 1;
 });
 
 skills.forEach((t) => {
   skillCount[t] += 1;
+});
+
+languages.forEach((t) => {
+  languageCount[t] += 1;
 });
 
 export const allTools = Object.entries(toolCount).map((tc) => {
@@ -71,6 +82,13 @@ export const allTools = Object.entries(toolCount).map((tc) => {
 });
 
 export const allSkills = Object.entries(skillCount).map((tc) => {
+  return {
+    name: tc[0],
+    count: tc[1],
+  } as Category;
+});
+
+export const allLanguages = Object.entries(languageCount).map((tc) => {
   return {
     name: tc[0],
     count: tc[1],

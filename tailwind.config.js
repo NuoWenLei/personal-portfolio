@@ -9,6 +9,9 @@ module.exports = {
         work: "url('../public/work.jpg')",
         remote: "url('../public/remote.png')",
       },
+      colors: {
+        "color-bg": "#0D1321",
+      },
     },
   },
   plugins: [],
