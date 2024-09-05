@@ -275,7 +275,7 @@ export default function Home() {
           src={"./personal_photo.jpeg"}
           className="w-screen h-[120%] absolute object-cover -z-10"
         /> */}
-        <div id="home" className={`w-screen h-full bg-color-bg/30 pb-[20vh]`}>
+        <div id="home" className={`w-screen h-full bg-color-bg/40 pb-[20vh]`}>
           <div className="flex flex-col h-[90%] xl:h-full mr-auto justify-end xl:justify-center pl-16 xl:pt-24 text-gray-600 gap-0">
             <p className="ml-18 xl:ml-24 font-bold text-8xl xl:text-9xl text-[#6aa5ff] brightness-110 mb-5 mix-blend-lighten">
               Nuo Wen Lei
