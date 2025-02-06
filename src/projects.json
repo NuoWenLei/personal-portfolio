@@ -19,6 +19,44 @@
     "status": "current"
   },
   {
+    "id": "codex",
+    "title": "Codex - Developer Tool for Multilingual Teams",
+    "summary": "As the winner of the Best Developer Tool project in the Hack@Brown 2025 Hackathon, my teammates and I created a developer tool that automatically translates comments into each developer's preferred language using LLMs with content moderation and Git hooks as well as a GitHub-like web interface for people to browse code in their preferred language.",
+    "titleImage": "codex-repos.png",
+    "skills": ["Software Engineering"],
+    "tools": [
+      "FastAPI",
+      "Amazon EC2",
+      "MongoDB",
+      "GitHub API",
+      "OpenAI",
+      "Dify.ai",
+      "Vercel",
+      "Next.js",
+      "Git Hooks"
+    ],
+    "languages": ["Python", "Typescript", "Bash Script"],
+    "links": [
+      {
+        "name": "Check out Codex",
+        "url": "https://www.codextech.us/"
+      },
+      {
+        "name": "Hackathon Submission (Devpost)",
+        "url": "https://devpost.com/software/codex-r2toqu?ref_content=my-projects-tab&ref_feature=my_projects"
+      },
+      {
+        "name": "Backend (FastAPI) GitHub Repo",
+        "url": "https://github.com/Codex-Hack-Brown2025/backend"
+      },
+      {
+        "name": "Frontend GitHub Repo",
+        "url": "https://github.com/Codex-Hack-Brown2025/frontend"
+      }
+    ],
+    "status": "current"
+  },
+  {
     "id": "dungeongpt",
     "title": "DungeonGPT - Dungeon Crawler with ChatGPT",
     "summary": "As part of a Microsoft Intern Game Jam event, my friends and I created a dungeon crawler game navigated through a natural language interface powered by GPT-4o.",
@@ -85,7 +123,7 @@
   {
     "id": "ai-telephone",
     "title": "TelePhoto - Telephone with Generative AI",
-    "summary": "As a winning project in the Hack@Brown Hackathon, my friends and I created an online telephone game with a twist ... you can only communicate through AI-generated images!",
+    "summary": "As a winning project in the Hack@Brown 2024 Hackathon, my teammates and I created an online telephone game with a twist ... you can only communicate through AI-generated images!",
     "titleImage": "telephoto.png",
     "skills": ["Software Engineering"],
     "tools": [
