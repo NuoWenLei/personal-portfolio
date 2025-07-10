@@ -99,9 +99,9 @@ export default function ProjectFilter({
         </div>
       )}
       <div
-        className={`relative ml-4 w-full h-full flex flex-row gap-x-6 bg-color-bg`}
+        className={`relative ml-4 w-full h-full flex flex-col lg:flex-row gap-y-4 lg:gap-x-6 bg-color-bg`}
       >
-        <div className="flex flex-col w-1/3 h-[95%] gap-y-6 p-4 rounded-lg bg-[#162037] overflow-y-scroll">
+        <div className="flex flex-col lg:flex-col w-full lg:w-1/3 h-1/4 lg:h-[95%] gap-y-6 p-4 rounded-lg bg-[#162037] overflow-y-scroll">
           <h3 className="font-medium text-xl">Filters</h3>
           <button
             type="button"
@@ -223,7 +223,7 @@ export default function ProjectFilter({
           </div>
         </div>
         <div
-          className={`flex flex-row flex-wrap w-3/4 overflow-y-scroll gap-x-6 gap-y-4 items-start h-min max-h-5/6 bg-color-bg`}
+          className={`flex flex-row flex-wrap w-full lg:w-3/4 overflow-y-scroll justify-center lg:justify-start gap-x-6 gap-y-4 items-start h-min max-h-5/6 bg-color-bg`}
         >
           {filteredProjects.map((p, i) => (
             <MiniProjectCard

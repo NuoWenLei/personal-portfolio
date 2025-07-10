@@ -120,7 +120,7 @@ export default function Home() {
   }, [visiblePage, visibleProject]);
 
   useEffect(() => {
-    if (windowSize[0] < 1024) {
+    if (windowSize[0] < 768) {
       ReactGA.send({ hitType: "pageview", page: "mobile" });
       setBlockDisplay(true);
     } else {

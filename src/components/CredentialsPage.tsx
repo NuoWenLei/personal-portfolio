@@ -80,7 +80,7 @@ function CredentialItem({ imgUrl, info }: CredentialProps) {
   // TODO: MIMIC linkedin items
   return (
     <div className="flex flex-row gap-8 xl:gap-16 my-10 group w-1/2">
-      <div className="hidden md:flex h-32 w-32 overflow-hidden rounded-lg p-4 bg-white">
+      <div className="hidden lg:flex w-32 h-32 overflow-hidden rounded-lg p-4 bg-white">
         <img
           className="h-full w-full object-center object-cover rounded-lg"
           src={imgUrl}
