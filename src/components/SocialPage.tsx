@@ -8,7 +8,7 @@ import { LinkIcon } from "@heroicons/react/24/solid";
 
 export default function SocialPage() {
   return (
-    <div className="flex flex-col justify-center h-full w-full lg:w-fit">
+    <div className="flex flex-col justify-center h-full w-full">
       <div className="flex flex-col lg:flex-row gap-8 my-auto items-start">
         <SocialLink
           icon={<LinkedIn className="h-full w-full" />}
